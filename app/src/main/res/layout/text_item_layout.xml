@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvNewBrands"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:fontFamily="@font/sanspro"
+            android:text="just In"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_30"
+            app:drawableRightCompat="@drawable/ic_baseline_add_24" />
+
+        <View
+            android:id="@+id/vLineTextBrand"
+            style="@style/ViewInAccountsFragment"
+            android:layout_marginTop="@dimen/dp_10" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -6,16 +6,11 @@ import android.os.Bundle;
 
 import com.example.nykaa.R;
 
-public class MainScreenActivity extends AppCompatActivity {
+public class HelpCenterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_screen);
-        launchAccountFragment();
-    }
-
-    private void launchAccountFragment() {
-
+        setContentView(R.layout.activity_help_center);
     }
 }

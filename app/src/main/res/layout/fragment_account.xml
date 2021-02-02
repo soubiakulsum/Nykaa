@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,62 +8,255 @@
     android:orientation="vertical"
     tools:context=".Fragments.AccountFragment">
 
-    <TextView
-        android:id="@+id/tvHelloThere"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_there"
-        android:textColor="@color/black"
-        android:textSize="35sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvHelloThere"
-        android:layout_marginTop="20dp"
-        android:text="Soubia"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
-
-    <View
-        android:id="@+id/vLineOne"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_below="@id/tvName"
-        android:layout_marginTop="10dp"
-        android:background="#c0c0c0" />
-
-    <TextView
-        android:id="@+id/tvMyOrders"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/vLineOne"
-        android:layout_marginTop="20dp"
-        android:drawablePadding="15dp"
-        android:text="@string/my_orders"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        android:textStyle="normal"
-        app:drawableLeftCompat="@drawable/ic_block_1" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/vLineOne"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="20dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/ic_baseline_navigate_next_24" />
-
-    <View
-        android:id="@+id/vLineTwo"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_below="@id/tvMyOrders"
-        android:layout_marginTop="13dp"
-        android:background="#c0c0c0" />
+        android:layout_height="match_parent">
 
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tvHelloThere"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_there"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvHelloThere"
+            android:layout_marginTop="20dp"
+            android:text="Soubia"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <View
+            android:id="@+id/vLineOne"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@id/tvName"
+            android:layout_marginTop="10dp"
+            android:background="#c0c0c0" />
+
+        <TextView
+            android:id="@+id/tvMyOrders"
+            style="@style/FirstTextViewInAccounts"
+            android:layout_below="@id/vLineOne"
+            android:text="@string/my_orders"
+            app:drawableLeftCompat="@drawable/ic_block_1" />
+
+        <ImageButton
+            style="@style/ImageButtonInAccounts"
+            android:layout_below="@id/vLineOne"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_navigate_next_24" />
+
+        <View
+            android:id="@+id/vLineTwo"
+            style="@style/ViewInAccountsFragment"
+            android:layout_below="@id/tvMyOrders" />
+
+        <TextView
+            android:id="@+id/tvMyWishlist"
+            style="@style/FirstTextViewInAccounts"
+            android:layout_below="@id/vLineTwo"
+            android:drawableLeft="@drawable/ic_heart"
+            android:text="@string/my_wishlist" />
+
+        <ImageButton
+            style="@style/ImageButtonInAccounts"
+            android:layout_below="@id/vLineTwo"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_navigate_next_24" />
+
+        <View
+            android:id="@+id/vLineThree"
+            style="@style/ViewInAccountsFragment"
+            android:layout_below="@id/tvMyWishlist" />
+
+        <TextView
+            android:id="@+id/tvStyleFiles"
+            style="@style/FirstTextViewInAccounts"
+            android:layout_below="@id/vLineThree"
+            android:text="@string/style_files"
+            app:drawableLeftCompat="@drawable/ic_heels" />
+
+        <View
+            android:id="@+id/vLineFour"
+            style="@style/ViewInAccountsFragment"
+            android:layout_below="@id/tvStyleFiles" />
+
+        <ImageButton
+            style="@style/ImageButtonInAccounts"
+            android:layout_below="@id/vLineThree"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_navigate_next_24" />
+
+        <TextView
+            android:id="@+id/tvChatWithUs"
+            style="@style/FirstTextViewInAccounts"
+            android:layout_below="@id/vLineFour"
+            android:text="@string/chat_with_us"
+            app:drawableLeftCompat="@drawable/ic_chat" />
+
+        <View
+            android:id="@+id/vLineFive"
+            style="@style/ViewInAccountsFragment"
+            android:layout_below="@id/tvChatWithUs" />
+
+        <ImageButton
+            style="@style/ImageButtonInAccounts"
+            android:layout_below="@id/vLineFour"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_navigate_next_24" />
+
+        <TextView
+            android:id="@+id/tvOthers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vLineFive"
+            android:layout_marginTop="@dimen/dp_20"
+            android:text="@string/others"
+            android:textSize="@dimen/sp_20" />
+
+        <TextView
+            android:id="@+id/tvCountry"
+            style="@style/SecondTextViewInAccountsFragment"
+            android:layout_below="@id/tvOthers"
+            android:text="@string/country_amp_currency" />
+
+        <TextView
+            android:id="@+id/tvIndia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCountry"
+            android:layout_marginTop="@dimen/dp_15"
+            android:text="@string/india_inr"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_20" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCountry"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:text="Change"
+            android:textAllCaps="false"
+            android:textColor="#E50038"
+            android:textSize="@dimen/sp_18" />
+
+        <View
+            android:id="@+id/vLineSix"
+            style="@style/ViewInAccountsFragment"
+            android:layout_below="@id/tvIndia" />
+
+        <Button
+            android:id="@+id/btnHelpCenter"
+            style="@style/ButtonInAccountsFragments"
+            android:layout_below="@id/vLineSix"
+            android:text="@string/help_center" />
+
+        <View
+            android:id="@+id/vLineSeven"
+            style="@style/ViewInAccountsFragment"
+            android:layout_below="@id/btnHelpCenter" />
+
+        <Button
+            android:id="@+id/btnResponsible"
+            style="@style/ButtonInAccountsFragments"
+            android:layout_below="@id/vLineSeven"
+            android:text="@string/responsible_disclosure" />
+
+        <View
+            android:id="@+id/vLineEight"
+            style="@style/ViewInAccountsFragment"
+            android:layout_below="@id/btnResponsible" />
+
+        <Button
+            android:id="@+id/btnShippingPolicy"
+            style="@style/ButtonInAccountsFragments"
+            android:layout_below="@id/vLineEight"
+            android:text="@string/shipping_policy" />
+
+        <View
+            android:id="@+id/vLineNine"
+            style="@style/ViewInAccountsFragment"
+            android:layout_below="@id/btnShippingPolicy" />
+
+        <Button
+            android:id="@+id/btnTerms"
+            style="@style/ButtonInAccountsFragments"
+            android:layout_below="@id/vLineNine"
+            android:text="@string/terms_amp_conditions" />
+
+        <View
+            android:id="@+id/vLineTen"
+            style="@style/ViewInAccountsFragment"
+            android:layout_below="@id/btnTerms" />
+
+        <Button
+            android:id="@+id/btnPrivacy"
+            style="@style/ButtonInAccountsFragments"
+            android:layout_below="@id/vLineTen"
+            android:text="@string/privacy_policy" />
+
+        <View
+            android:id="@+id/vLineEleven"
+            style="@style/ViewInAccountsFragment"
+            android:layout_below="@id/btnPrivacy" />
+
+        <Button
+            android:id="@+id/btnRate"
+            style="@style/ButtonInAccountsFragments"
+            android:layout_below="@id/vLineEleven"
+            android:text="@string/rate_app" />
+
+        <View
+            android:id="@+id/vLineTwelve"
+            style="@style/ViewInAccountsFragment"
+            android:layout_below="@id/btnRate" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            style="@style/ButtonInAccountsFragments"
+            android:layout_below="@id/vLineTwelve"
+            android:text="@string/logout" />
+
+        <View
+            android:id="@+id/vLineThirteen"
+            style="@style/ViewInAccountsFragment"
+            android:layout_below="@id/btnLogout" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
