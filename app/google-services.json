@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "368059219235",
+    "project_id": "nykaa-a5468",
+    "storage_bucket": "nykaa-a5468.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368059219235:android:9a9a8fece308f71f66e096",
+        "android_client_info": {
+          "package_name": "com.example.nykaa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368059219235-ao6ajf209ivfbuqiobie6anivptahue9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDxF9OvpaUW9S0Uvpw2n7ofSdU-8oJLxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "368059219235-ao6ajf209ivfbuqiobie6anivptahue9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

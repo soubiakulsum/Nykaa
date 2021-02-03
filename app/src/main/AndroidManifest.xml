@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nykaa">
-        <activity android:name=".Activities.MainScreenActivity"></activity>
+        <activity android:name=".Activities.Dashboard_Activity"></activity>
+        <activity android:name=".Activities.Verification_OTP" />
+        <activity android:name=".Activities.Phone_Authentication" />
+        <activity android:name=".Activities.LoginActivity" />
+        <activity android:name=".Activities.MainScreenActivity" />
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
