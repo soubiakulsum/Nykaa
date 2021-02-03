@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".Activities.Verification_OTP">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:src="@drawable/otpimage"
+        android:layout_marginStart="@dimen/dp_250"
+        android:layout_height="170dp"/>
+
+
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+          <TextView
+              android:layout_marginTop="@dimen/dp_10"
+              android:layout_width="wrap_content"
+              android:layout_marginStart="@dimen/dp_20"
+              android:drawableStart="@drawable/ic_left_arrow"
+              android:layout_height="wrap_content"/>
+
+
+          <TextView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/dp_40"
+        android:textSize="@dimen/sp_25"
+        android:text="Verify OTP"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/dp_40"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/dp_40"
+        android:textColor="@color/black"
+        android:text="Enter the six digit OTP sent via sms on"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_marginTop="@dimen/dp_15"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/dp_40"
+
+        android:layout_height="wrap_content"/>
+
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_width="match_parent"
+        android:background="#F0F0F0"
+        android:layout_margin="@dimen/dp_40"
+        android:layout_height="wrap_content">
+
+
+      <EditText
+          android:layout_width="@dimen/dp_40"
+          android:hint="  0"
+          android:id="@+id/et1"
+          android:inputType="number"
+          android:layout_marginStart="@dimen/dp_15"
+          android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="@dimen/dp_40"
+            android:hint="  0"
+            android:inputType="number"
+            android:layout_marginStart="@dimen/dp_70"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="@dimen/dp_40"
+            android:layout_marginStart="@dimen/dp_120"
+            android:hint="  0"
+            android:inputType="number"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="@dimen/dp_40"
+            android:hint="  0"
+            android:inputType="number"
+            android:layout_marginStart="@dimen/dp_170"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="@dimen/dp_40"
+            android:hint="  0"
+            android:inputType="number"
+            android:layout_marginStart="@dimen/dp_220"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:layout_width="@dimen/dp_40"
+            android:hint="   0"
+            android:inputType="number"
+            android:layout_marginStart="@dimen/dp_270"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resend OTP"
+        android:id="@+id/ResendOTP"
+        android:backgroundTint="@color/white"
+        android:layout_marginStart="@dimen/dp_40"/>
+
+
+
+      </LinearLayout>
+
+
+
+
+
+
+
+
+</RelativeLayout>
