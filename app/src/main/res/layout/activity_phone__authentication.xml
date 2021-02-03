@@ -11,7 +11,7 @@
     <ImageView
         android:layout_width="400dp"
         android:src="@drawable/imagephonelogin"
-        android:layout_marginStart="@dimen/dp_250"
+        android:layout_marginStart="250dp"
         android:layout_height="170dp"/>
 
 
@@ -86,7 +86,7 @@
                 android:layout_marginTop="37dp"
                 android:textColor="@color/black"
                 android:id="@+id/etNumber"
-                android:backgroundTint="@color/pink"
+                android:backgroundTint="@color/black"
                 android:hint="Enter 10 Digit Number"
                 android:inputType="number"
                 android:layout_marginStart="@dimen/dp_60"
