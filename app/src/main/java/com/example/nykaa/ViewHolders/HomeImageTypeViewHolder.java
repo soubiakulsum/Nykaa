@@ -32,22 +32,20 @@ public class HomeImageTypeViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void setData(LandingpageDataItem landingpageDataItem, RecyclerViewClickListener recyclerViewClickListener) {
-        if(!landingpageDataItem.getInventoryName().equals("hp.strips")){
+
+        String url =landingpageDataItem.getWidgetData().getChildren().get(0).getChildren().get(0).getSource().mobile;
+        if (url.charAt(url.length() - 1) == 'f' && url.charAt(url.length() - 2) == 'i' && url.charAt(url.length() - 2) == 'i') {
             textView.setText(landingpageDataItem.getWidgetData().getParameters().getTitle());
             imageViewStrip.setVisibility(View.GONE);
             imageView.setVisibility(View.VISIBLE);
-            Glide.with(item.getContext())
-                    .asGif()
-                    .load(landingpageDataItem.getWidgetData().getChildren().get(0).getChildren().get(0).getSource().mobile)
-                    .into(imageView);
-        }else {
+            Glide.with(item.getContext()).asGif().load(landingpageDataItem.getWidgetData().getChildren().get(0).getChildren().get(0).getSource().mobile).into(imageView);
+        } else {
             textView.setVisibility(View.GONE);
             imageView.setVisibility(View.GONE);
             imageViewStrip.setVisibility(View.VISIBLE);
-            Glide.with(item.getContext())
-                    .load(landingpageDataItem.getWidgetData().getChildren().get(0).getChildren().get(0).getSource().mobile)
-                    .into(imageViewStrip);
+            Glide.with(item.getContext()).load(landingpageDataItem.getWidgetData().getChildren().get(0).getChildren().get(0).getSource().mobile).into(imageViewStrip);
         }
+
       // Log.d("stugg", landingpageDataItem.getWidgetData().getParameters().getTitle());
 
     }

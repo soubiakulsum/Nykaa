@@ -8,7 +8,9 @@
     <ImageView
         android:id="@+id/imgaveView"
         android:layout_width="180dp"
-        android:layout_height="265dp" />
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        />
 
     <TextView
         android:id="@+id/textView"

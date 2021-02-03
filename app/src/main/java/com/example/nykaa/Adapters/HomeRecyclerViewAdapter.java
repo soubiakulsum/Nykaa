@@ -16,8 +16,10 @@ import com.example.nykaa.ViewHolders.CategoryItemRecyclerViewHolder;
 import com.example.nykaa.ViewHolders.CategoryRecyclerViewHolder;
 import com.example.nykaa.ViewHolders.ColumnGridRecyclerViewHolder;
 import com.example.nykaa.ViewHolders.ColumnGridTopCateViewHolder;
+import com.example.nykaa.ViewHolders.DummyViewHolder;
 import com.example.nykaa.ViewHolders.HomeImageTypeViewHolder;
 import com.example.nykaa.ViewHolders.HouseOfNykaaViewHolder;
+import com.example.nykaa.ViewHolders.InFocusViewHolder;
 import com.example.nykaa.ViewHolders.SlidingWidgetRecyclerViewHolder;
 import com.example.nykaa.clickListener.RecyclerViewClickListener;
 
@@ -62,6 +64,15 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
             return new HouseOfNykaaViewHolder(view);
         }
 
+        if (viewType == CategoryConstant.IN_FOCUS_VIEW_HOLDER) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.in_focus_layout, parent, false);
+            return new InFocusViewHolder(view);
+        }
+        if (viewType == -1) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.dummy_layout, parent, false);
+            return new DummyViewHolder(view);
+        }
+
         return null;
     }
 
@@ -86,6 +97,12 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
         }
         if (holder instanceof HouseOfNykaaViewHolder) {
             ((HouseOfNykaaViewHolder) holder).setData(list.get(position - 1), recyclerViewClickListener);
+        }
+        if (holder instanceof InFocusViewHolder) {
+            ((InFocusViewHolder) holder).setData(list.get(position - 1), recyclerViewClickListener);
+        }
+        if (holder instanceof DummyViewHolder) {
+
         }
     }
 
@@ -123,16 +140,31 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
                     if (list.get(position - 1).getInventoryName().equals("hp.best-selling-brands")) {
                         return CategoryConstant.HOUSE_OF_NYKAA;
                     }
+                    if (list.get(position - 1).getInventoryName().equals("hp.sporty-selects") || list.get(position - 1).getInventoryName().equals("hp.watch-out")) {
+                        return CategoryConstant.HOUSE_OF_NYKAA;
+                    }
+                    if (list.get(position - 1).getWidgetData().getParameters().getNo_of_cols() != null && list.get(position - 1).getWidgetData().getParameters().getNo_of_cols().equals("2")) {
+                        return CategoryConstant.HOUSE_OF_NYKAA;
+                    }
+
                     return CategoryConstant.COLUMN_GRID_BANNER_IMAGE_VIEW_HOLDER;
                 }
             }
         }
+        if (list.get(position - 1).getWidgetData().getWtype().equals(CategoryConstant.IN_FOCUS)) {
+            if (list.get(position - 1).getWidgetData().getChildren().get(0).getWtype().equals(CategoryConstant.BANNER)) {
+                if (list.get(position - 1).getWidgetData().getChildren().get(0).getChildren().get(0).getWtype().equals(CategoryConstant.IMAGE)) {
+                    return CategoryConstant.IN_FOCUS_VIEW_HOLDER;
+                }
+            }
+        }
 
-        return 0;
+        return -1;
     }
 
     @Override
     public int getItemCount() {
-        return 9;
+        return 39;
     }
+    //TAGGED_SLIDING_WIDGET
 }

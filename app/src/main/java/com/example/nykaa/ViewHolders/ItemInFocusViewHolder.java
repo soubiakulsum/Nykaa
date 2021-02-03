@@ -11,8 +11,8 @@ import com.example.nykaa.HelperClass.ImageLoader;
 import com.example.nykaa.R;
 import com.example.nykaa.clickListener.RecyclerViewClickListener;
 
-public class ItemColumnGridViewHolder extends RecyclerView.ViewHolder {
-    public ItemColumnGridViewHolder(@NonNull View itemView) {
+public class ItemInFocusViewHolder extends RecyclerView.ViewHolder {
+    public ItemInFocusViewHolder(@NonNull View itemView) {
         super(itemView);
         initView(itemView);
     }
@@ -26,13 +26,10 @@ public class ItemColumnGridViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void setData(ChildrenItem childrenItem, RecyclerViewClickListener recyclerViewClickListener) {
-        if(childrenItem.getChildren().get(0).getSource().mobile == null || childrenItem.getChildren().get(0).getSource().mobile.equals("")){
+        if (childrenItem.getChildren().get(0).getSource().mobile == null || childrenItem.getChildren().get(0).getSource().mobile.equals("")) {
             ImageLoader.loadImage(view, imageView, childrenItem.getChildren().get(0).getSource().web);
-        }else {
+        } else {
             ImageLoader.loadImage(view, imageView, childrenItem.getChildren().get(0).getSource().mobile);
         }
-
     }
-
-
 }
