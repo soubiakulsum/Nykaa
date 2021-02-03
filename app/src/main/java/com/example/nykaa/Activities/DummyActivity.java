@@ -20,9 +20,9 @@ public class DummyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dummy);
 
         fragmentManager = getSupportFragmentManager();
-        SalesFragment salesFragment = SalesFragment.newInstance();
+        HomeFragment homeFragment = HomeFragment.newInstance();
         FragmentTransaction fragmentTransaction =fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.container, salesFragment, "sales").commit();
+        fragmentTransaction.replace(R.id.container, homeFragment, "sales").commit();
 
     }
 }
