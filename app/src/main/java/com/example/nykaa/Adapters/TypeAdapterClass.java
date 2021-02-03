@@ -29,7 +29,7 @@ public class TypeAdapterClass extends RecyclerView.Adapter<TypeViewHolderClass> 
     public TypeViewHolderClass onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.type_layout,parent,false);
-        return new TypeViewHolderClass(view);
+        return new TypeViewHolderClass(view,typeClickListener);
     }
 
     @Override

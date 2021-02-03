@@ -26,6 +26,7 @@
 
         <TextView
             android:layout_width="wrap_content"
+            android:id="@+id/tvJustInBrands"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_6"
             android:fontFamily="@font/sanspro"
