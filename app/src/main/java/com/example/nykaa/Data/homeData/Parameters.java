@@ -205,6 +205,13 @@ public class Parameters{
 	@SerializedName("gradient_stop1")
 	private String gradientStop1;
 
+	@SerializedName("no_of_cols")
+	private String no_of_cols;
+
+	public String getNo_of_cols() {
+		return no_of_cols;
+	}
+
 	public String getChildWidth(){
 		return childWidth;
 	}

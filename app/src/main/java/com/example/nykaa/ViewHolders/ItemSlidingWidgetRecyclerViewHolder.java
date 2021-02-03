@@ -30,7 +30,13 @@ public class ItemSlidingWidgetRecyclerViewHolder extends RecyclerView.ViewHolder
     }
 
     public void SetData(ChildrenItem childrenItem, RecyclerViewClickListener recyclerViewClickListener) {
-        text.setText(childrenItem.getParameters().getTitlePlain());
+
+        if (!childrenItem.getParameters().getTitlePlain().equals("")) {
+            text.setText(childrenItem.getParameters().getTitlePlain());
+        } else {
+            text.setText(childrenItem.getParameters().getDescription());
+        }
+
         String url = childrenItem.getChildren().get(0).source.web;
         if (url.charAt(url.length() - 1) == 'f' && url.charAt(url.length() - 2) == 'i' && url.charAt(url.length() - 2) == 'i') {
             Glide.with(view.getContext()).asGif().load(childrenItem.getChildren().get(0).source.web).into(image);

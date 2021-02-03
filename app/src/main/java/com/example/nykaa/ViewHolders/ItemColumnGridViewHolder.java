@@ -26,7 +26,11 @@ public class ItemColumnGridViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void setData(ChildrenItem childrenItem, RecyclerViewClickListener recyclerViewClickListener) {
-        ImageLoader.loadImage(view, imageView, childrenItem.getChildren().get(0).getSource().web);
+        if(childrenItem.getChildren().get(0).getSource().mobile == null || childrenItem.getChildren().get(0).getSource().mobile.equals("")){
+            ImageLoader.loadImage(view, imageView, childrenItem.getChildren().get(0).getSource().web);
+        }else {
+            ImageLoader.loadImage(view, imageView, childrenItem.getChildren().get(0).getSource().mobile);
+        }
 
     }
 
