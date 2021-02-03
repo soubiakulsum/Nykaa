@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.CategoriesFragment">
+
+   <fragment
+       android:layout_width="@dimen/dp_150"
+       android:id="@+id/CategoryType"
+       android:name="com.example.nykaa.Fragments.CategoryTypeFragment"
+       android:layout_height="match_parent"/>
+
+   <fragment
+       android:layout_width="260dp"
+       android:id="@+id/CategoryName"
+       android:name="com.example.nykaa.Fragments.CategoryNameFragment"
+       android:layout_height="match_parent"/>
+
+</LinearLayout>

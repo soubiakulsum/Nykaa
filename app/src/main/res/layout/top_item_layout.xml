@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_20"
+    android:elevation="@dimen/dp_20">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sanspro"
+            android:text="Top Just In"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_23" />
+
+        <ImageView
+            android:id="@+id/ivBrands"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_200"
+            android:layout_marginTop="@dimen/dp_20" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/tvJustInBrands"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:fontFamily="@font/sanspro"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_25" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
