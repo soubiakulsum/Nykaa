@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nykaa">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nykaa">
+
+        <activity android:name=".MainDummyActivity">
+        </activity>
+        <activity android:name=".Activities.Dashboard_Activity" />
+        <activity android:name=".Activities.Verification_OTP" />
+        <activity android:name=".Activities.Phone_Authentication" />
+        <activity android:name=".Activities.LoginActivity" />
+
 
         <activity android:name=".Activities.DisclosureActivity"></activity>
         <activity android:name=".Activities.HelpCenterActivity" />

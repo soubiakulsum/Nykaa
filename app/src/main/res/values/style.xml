@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <style name="item_title_text_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:fontFamily">@font/cera_pro_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="item_second_title_text_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:fontFamily">@font/cera_pro_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+
     <style name="FirstTextViewInAccounts">
         
         <item name="android:layout_width">wrap_content</item>
@@ -56,4 +76,5 @@
         <item name="android:textSize">@dimen/dp_15</item>
         <item name="android:layout_marginTop">@dimen/dp_6</item>
     </style>
+
 </resources>

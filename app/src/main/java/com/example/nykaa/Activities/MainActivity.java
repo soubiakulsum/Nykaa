@@ -1,23 +1,29 @@
 package com.example.nykaa.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
 
-import com.example.nykaa.LoginActivity;
+import com.example.nykaa.Fragments.HomeFragment;
 import com.example.nykaa.R;
 
 public class MainActivity extends AppCompatActivity {
 
+
     ImageView imageView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         imageView = findViewById(R.id.image);
 
@@ -35,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         },2500);
+
 
     }
 }
