@@ -11,11 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nykaa">
-        <activity android:name=".Activities.DummyActivity"></activity>
-        <activity android:name=".Activities.Dashboard_Activity" />
-        <activity android:name=".Activities.Verification_OTP" />
-        <activity android:name=".Activities.Phone_Authentication" />
-        <activity android:name=".Activities.LoginActivity" />
+
+        <activity android:name=".Activities.DisclosureActivity"></activity>
+        <activity android:name=".Activities.HelpCenterActivity" />
+
+        <activity android:name=".LoginActivity"></activity>
+
         <activity android:name=".Activities.MainScreenActivity" />
         <activity android:name=".Activities.MainActivity">
 

@@ -1,5 +1,25 @@
 <resources>
     <string name="app_name">Nykaa</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_there">Hello there!</string>
+    <string name="soubia">Soubia</string>
+    <string name="my_orders">My Orders</string>
+    <string name="my_wishlist">My Wishlist</string>
+    <string name="style_files">Style Files</string>
+    <string name="chat_with_us">Chat with Us</string>
+    <string name="others">Others</string>
+    <string name="country_amp_currency"><![CDATA[Country & Currency :]]></string>
+    <string name="india_inr">India | INR</string>
+    <string name="help_center">Help Center</string>
+    <string name="responsible_disclosure">Responsible Disclosure</string>
+    <string name="shipping_policy">Shipping Policy</string>
+    <string name="terms_amp_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="rate_app">Rate App</string>
+    <string name="logout">Logout</string>
+    <string name="fashion">FASHION</string>
+    <string name="search_faqs">Search FAQs</string>
+    <string name="help_categories">Help Categories</string>
+    <string name="order">Order /n Related</string>
 
 </resources>
