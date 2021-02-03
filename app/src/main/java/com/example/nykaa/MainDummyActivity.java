@@ -19,7 +19,7 @@ public class MainDummyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_dummy);
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        ListOfItemsFragment homeFragment = ListOfItemsFragment.newInstance();
+        HomeFragment homeFragment = HomeFragment.newInstance();
         fragmentTransaction.replace(R.id.container, homeFragment, "aa").commit();
     }
 }

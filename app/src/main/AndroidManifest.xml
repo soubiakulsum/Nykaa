@@ -20,17 +20,17 @@
         <activity android:name=".Activities.HelpCenterActivity" />
         <activity android:name=".Activities.DummyActivity" >
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".Activities.MainScreenActivity" />
 
         <activity android:name=".MainDummyActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity android:name=".Activities.Dashboard_Activity" />

@@ -1,6 +1,11 @@
 package com.example.nykaa.Fragments;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,15 +13,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Handler;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.Toast;
-
 import com.example.nykaa.Adapters.HomeRecyclerViewAdapter;
+import com.example.nykaa.Data.constants.CategoryConstant;
 import com.example.nykaa.Data.homeData.HomeResponseModel;
 import com.example.nykaa.Data.homeData.LandingpageDataItem;
 import com.example.nykaa.R;
@@ -74,12 +72,6 @@ public class HomeFragment extends Fragment implements RecyclerViewClickListener 
 
     }
 
-    @Override
-    public void OnCategoryItemClicked(int item) {
-        Toast.makeText(getActivity(), item + "", Toast.LENGTH_SHORT).show();
-    }
-
-
     public void buildData() {
         Thread thread = new Thread(runnable);
         thread.start();
@@ -91,6 +83,7 @@ public class HomeFragment extends Fragment implements RecyclerViewClickListener 
             loadJsonFromAsset();
         }
     };
+    private String fileName = "men.json";
 
     private void loadJsonFromAsset() {
         try {
@@ -110,6 +103,7 @@ public class HomeFragment extends Fragment implements RecyclerViewClickListener 
     }
 
     private List<LandingpageDataItem> homeData;
+    private HomeRecyclerViewAdapter homeRecyclerViewAdapter;
 
     private void buildDataFromJson(String json) {
 
@@ -120,11 +114,67 @@ public class HomeFragment extends Fragment implements RecyclerViewClickListener 
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                HomeRecyclerViewAdapter homeRecyclerViewAdapter = new HomeRecyclerViewAdapter(HomeFragment.this, homeData);
+                homeRecyclerViewAdapter = new HomeRecyclerViewAdapter(HomeFragment.this, homeData);
                 recyclerview.setAdapter(homeRecyclerViewAdapter);
             }
         }, 3000);
 
 
     }
+
+    private int itemCategory = CategoryConstant.WOMEN;
+
+    @Override
+    public void OnCategoryItemClicked(int item) {
+
+        if (item == CategoryConstant.WOMEN) {
+            itemCategory = CategoryConstant.WOMEN;
+            loadJsonFromAsset2("HomePageFile.json");
+        } else if (item == CategoryConstant.MEN) {
+            itemCategory = CategoryConstant.MEN;
+            loadJsonFromAsset2("men.json");
+        } else if (item == CategoryConstant.KIDS) {
+            itemCategory = CategoryConstant.KIDS;
+            loadJsonFromAsset2("kids.json");
+        } else if (item == CategoryConstant.LUXE) {
+            itemCategory = CategoryConstant.LUXE;
+            loadJsonFromAsset2("luxe.json");
+        }
+
+    }
+
+    private void loadJsonFromAsset2(String fileName) {
+        try {
+            InputStream inputStream = getActivity().getAssets().open(fileName);
+            int data = inputStream.read();
+            StringBuilder stringBuilder = new StringBuilder();
+            while (data != -1) {
+                char ch = (char) data;
+                stringBuilder.append(ch);
+                data = inputStream.read();
+            }
+            buildDataFromJson2(stringBuilder.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.e("stuff", e.getMessage());
+        }
+    }
+
+    private void buildDataFromJson2(String json) {
+
+        Type type = new TypeToken<HomeResponseModel>() {
+        }.getType();
+        HomeResponseModel response = new Gson().fromJson(json, type);
+        homeData = response.getLandingpage().getLandingpageData();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                homeRecyclerViewAdapter.UpdataData(itemCategory, homeData);
+                recyclerview.setAdapter(homeRecyclerViewAdapter);
+            }
+        });
+
+
+    }
+
 }
