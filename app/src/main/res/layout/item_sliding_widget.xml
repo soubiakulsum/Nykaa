@@ -8,8 +8,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:elevation="0dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         app:cardElevation="0dp"
         android:orientation="vertical"
         app:cardCornerRadius="5dp">
@@ -25,10 +25,7 @@
     <TextView
         android:id="@+id/text"
         android:layout_width="155dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        style="@style/item_second_title_text_view"
         android:text="sdasdasd" />
 
 </LinearLayout>
