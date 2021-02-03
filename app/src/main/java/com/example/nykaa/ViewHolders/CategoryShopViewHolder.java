@@ -1,4 +1,4 @@
 package com.example.nykaa.ViewHolders;
 
-public class NewStylesViewHolder {
+public class CategoryShopViewHolder {
 }
