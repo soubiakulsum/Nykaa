@@ -38,6 +38,5 @@ public class LoginActivity extends AppCompatActivity {
     public void Phone(View view) {
         Intent intent = new Intent(LoginActivity.this, Phone_Authentication.class);
         startActivity(intent);
-        finish();
     }
 }

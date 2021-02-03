@@ -11,11 +11,12 @@
     <ImageView
         android:layout_width="400dp"
         android:src="@drawable/imagephonelogin"
-        android:layout_marginStart="@dimen/dp_250"
+        android:layout_marginStart="250dp"
         android:layout_height="170dp"/>
 
 
     <LinearLayout
+        android:layout_marginTop="@dimen/dp_30"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="wrap_content">
@@ -30,8 +31,8 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_marginTop="@dimen/dp_40"
-            android:textSize="@dimen/sp_25"
+            android:layout_marginTop="@dimen/dp_20"
+            android:textSize="@dimen/sp_22"
             android:text="Login using mobile"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -85,6 +86,8 @@
                 android:layout_marginTop="37dp"
                 android:textColor="@color/black"
                 android:id="@+id/etNumber"
+                android:backgroundTint="@color/black"
+                android:hint="Enter 10 Digit Number"
                 android:inputType="number"
                 android:layout_marginStart="@dimen/dp_60"
                 android:layout_height="wrap_content"/>
@@ -93,7 +96,7 @@
         <View
             android:layout_marginTop="80dp"
             android:layout_width="match_parent"
-            android:layout_height="3.5dp"
+            android:layout_height="1dp"
             android:layout_marginBottom="5dp"
             android:background="@drawable/line_bg" />
 
@@ -108,7 +111,7 @@
 
 
         <Button
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="220dp"
             android:layout_width="match_parent"
             android:text="Proceed"
             android:id="@+id/GetOTP"

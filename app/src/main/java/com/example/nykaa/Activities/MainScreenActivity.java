@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.nykaa.Fragments.AccountFragment;
 import com.example.nykaa.R;
 
 public class MainScreenActivity extends AppCompatActivity {
@@ -17,5 +18,6 @@ public class MainScreenActivity extends AppCompatActivity {
 
     private void launchAccountFragment() {
 
+       getSupportFragmentManager().beginTransaction().add(R.id.flContainer,new AccountFragment()).commit();
     }
 }

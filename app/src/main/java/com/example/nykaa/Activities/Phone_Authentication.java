@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.nykaa.R;
 import com.hbb20.CountryCodePicker;
@@ -38,7 +40,9 @@ public class Phone_Authentication extends AppCompatActivity {
 
                 Intent intent= new Intent(Phone_Authentication.this, Verification_OTP.class);
 
-                intent.putExtra("mobile",ccp.getFullNumberWithPlus().replace(" ", ""));
+               intent.putExtra("mobile",ccp.getFullNumberWithPlus().replace(" ", ""));
+
+               // intent.putExtra("mobiles",mEtNumber.getText().toString());
 
                 startActivity(intent);
             }
