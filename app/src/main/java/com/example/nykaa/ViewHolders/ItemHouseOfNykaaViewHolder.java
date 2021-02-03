@@ -30,6 +30,12 @@ public class ItemHouseOfNykaaViewHolder extends RecyclerView.ViewHolder {
 
     public void setData(ChildrenItem childrenItem, RecyclerViewClickListener recyclerViewClickListener) {
         ImageLoader.loadImage(view, imgaveView, childrenItem.getChildren().get(0).getSource().web);
-        textView.setText(childrenItem.getParameters().getDescription());
+        if(childrenItem.getParameters().getDescription() == null || childrenItem.getParameters().getDescription().equals("")){
+            textView.setVisibility(View.GONE);
+        }else{
+            textView.setVisibility(View.VISIBLE);
+            textView.setText(childrenItem.getParameters().getDescription());
+        }
+
     }
 }
