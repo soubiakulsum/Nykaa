@@ -12,11 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nykaa">
         <activity android:name=".MainDummyActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Activities.Dashboard_Activity" />
         <activity android:name=".Activities.Verification_OTP" />
@@ -24,7 +19,11 @@
         <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.MainScreenActivity" />
         <activity android:name=".Activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
