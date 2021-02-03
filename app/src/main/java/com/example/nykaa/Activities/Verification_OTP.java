@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nykaa.R;
@@ -23,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Verification_OTP extends AppCompatActivity {
 
-    EditText mEt1;
+    EditText mtv1;
 
     String phonenumber;
 
@@ -33,6 +34,8 @@ public class Verification_OTP extends AppCompatActivity {
 
     Button bt1;
 
+    TextView mtvShowPhoneNumber;
+
 
 
 
@@ -40,13 +43,16 @@ public class Verification_OTP extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification__o_t_p);
-        mEt1 = findViewById(R.id.et1);
-
+        mtv1 = findViewById(R.id.et1);
+        mtvShowPhoneNumber=findViewById(R.id.ShowPhoneNumber);
         bt1 = findViewById(R.id.ResendOTP);
 
         //Bundle bundle = new Bundle();
 
         phonenumber = getIntent().getStringExtra("mobile").toString();
+
+        mtvShowPhoneNumber.setText(phonenumber);
+
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -58,15 +64,16 @@ public class Verification_OTP extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                if (mEt1.getText().toString().isEmpty())
+                if (mtv1.getText().toString().isEmpty())
                     Toast.makeText(getApplicationContext(), "Blank Field can not be processed", Toast.LENGTH_LONG).show();
-                else if (mEt1.getText().toString().length() != 6)
+                else if (mtv1.getText().toString().length() != 6)
                     Toast.makeText(getApplicationContext(), "Invalid OTP", Toast.LENGTH_LONG).show();
                 else {
-                    PhoneAuthCredential credential = PhoneAuthProvider.getCredential(otpid, mEt1.getText().toString());
+                    PhoneAuthCredential credential = PhoneAuthProvider.getCredential(otpid, mtv1.getText().toString());
                     signInWithPhoneAuthCredential(credential);
                 }
             }
+
 
         });
 
@@ -111,7 +118,7 @@ public class Verification_OTP extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful())
                         {
-                            startActivity(new Intent(Verification_OTP.this, Dashboard_Activity.class));
+                            startActivity(new Intent(Verification_OTP.this, DummyActivity.class));
                             finish();
 
                         } else {

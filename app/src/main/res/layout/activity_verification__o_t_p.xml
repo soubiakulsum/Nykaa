@@ -8,14 +8,15 @@
     tools:context=".Activities.Verification_OTP">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:src="@drawable/otpimage"
+        android:layout_width="161dp"
+        android:layout_height="124dp"
         android:layout_marginStart="@dimen/dp_250"
-        android:layout_height="170dp"/>
+        android:src="@drawable/otpimage" />
 
 
 
       <LinearLayout
+          android:layout_marginTop="@dimen/dp_40"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="wrap_content">
@@ -49,6 +50,7 @@
     <TextView
         android:layout_marginTop="@dimen/dp_15"
         android:textColor="@color/black"
+        android:id="@+id/ShowPhoneNumber"
         android:layout_width="match_parent"
         android:layout_marginStart="@dimen/dp_40"
 
@@ -59,52 +61,64 @@
         android:layout_marginTop="@dimen/dp_20"
         android:layout_width="match_parent"
         android:background="#F0F0F0"
-        android:layout_margin="@dimen/dp_40"
-        android:layout_height="wrap_content">
+        android:layout_margin="@dimen/dp_30"
+        android:layout_height="@dimen/dp_60">
 
 
       <EditText
-          android:layout_width="@dimen/dp_40"
+          android:layout_width="@dimen/dp_30"
           android:hint="  0"
           android:id="@+id/et1"
+          android:layout_marginTop="@dimen/dp_10"
+          android:background="@drawable/box"
           android:inputType="number"
-          android:layout_marginStart="@dimen/dp_15"
-          android:layout_height="wrap_content"/>
+          android:layout_marginStart="@dimen/dp_10"
+          android:layout_height="@dimen/dp_40"/>
 
         <EditText
-            android:layout_width="@dimen/dp_40"
+            android:layout_width="@dimen/dp_30"
             android:hint="  0"
+            android:background="@drawable/box"
+            android:layout_marginTop="@dimen/dp_10"
             android:inputType="number"
-            android:layout_marginStart="@dimen/dp_70"
-            android:layout_height="wrap_content"/>
+            android:layout_marginStart="@dimen/dp_60"
+            android:layout_height="@dimen/dp_40"/>
 
         <EditText
-            android:layout_width="@dimen/dp_40"
-            android:layout_marginStart="@dimen/dp_120"
+            android:layout_width="@dimen/dp_30"
+            android:layout_marginStart="@dimen/dp_110"
             android:hint="  0"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/box"
             android:inputType="number"
-            android:layout_height="wrap_content"/>
+            android:layout_height="@dimen/dp_40"/>
 
         <EditText
-            android:layout_width="@dimen/dp_40"
+            android:layout_width="@dimen/dp_30"
             android:hint="  0"
+            android:layout_marginTop="@dimen/dp_10"
             android:inputType="number"
-            android:layout_marginStart="@dimen/dp_170"
-            android:layout_height="wrap_content"/>
+            android:background="@drawable/box"
+            android:layout_marginStart="@dimen/dp_160"
+            android:layout_height="@dimen/dp_40"/>
 
         <EditText
-            android:layout_width="@dimen/dp_40"
+            android:layout_width="@dimen/dp_30"
             android:hint="  0"
+            android:layout_marginTop="@dimen/dp_10"
             android:inputType="number"
-            android:layout_marginStart="@dimen/dp_220"
-            android:layout_height="wrap_content"/>
+            android:background="@drawable/box"
+            android:layout_marginStart="@dimen/dp_210"
+            android:layout_height="@dimen/dp_40"/>
 
         <EditText
-            android:layout_width="@dimen/dp_40"
-            android:hint="   0"
+            android:layout_width="@dimen/dp_30"
+            android:hint="  0"
+            android:background="@drawable/box"
+            android:layout_marginTop="@dimen/dp_10"
             android:inputType="number"
-            android:layout_marginStart="@dimen/dp_270"
-            android:layout_height="wrap_content"/>
+            android:layout_marginStart="@dimen/dp_260"
+            android:layout_height="@dimen/dp_40"/>
 
     </RelativeLayout>
 

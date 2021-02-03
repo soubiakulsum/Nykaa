@@ -19,4 +19,9 @@
     <dimen name="dp_270">270dp</dimen>
     <dimen name="dp_300">300dp</dimen>
     <dimen name="dp_30">30dp</dimen>
+    <dimen name="sp_22">22sp</dimen>
+    <dimen name="dp_110">110dp</dimen>
+    <dimen name="dp_160">160dp</dimen>
+    <dimen name="dp_210">210dp</dimen>
+    <dimen name="dp_260">260dp</dimen>
 </resources>
