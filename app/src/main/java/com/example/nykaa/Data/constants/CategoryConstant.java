@@ -19,4 +19,6 @@ public class CategoryConstant {
     public static final int COLUMN_GRID_BANNER_IMAGE_VIEW_HOLDER_4 = 43;
     public static final int HOUSE_OF_NYKAA = 67;
     public static final int IN_FOCUS_VIEW_HOLDER = 4654;
+    public static final int NORMAL_ITEM_VIEW = 1354;
+    public static final int SPECIAL_ITEM_VIEW = 753;
 }

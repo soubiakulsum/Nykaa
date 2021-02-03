@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 
 import com.example.nykaa.Fragments.HomeFragment;
+import com.example.nykaa.Fragments.ListOfItemsFragment;
 
 public class MainDummyActivity extends AppCompatActivity {
 
@@ -18,7 +19,7 @@ public class MainDummyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_dummy);
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        HomeFragment homeFragment = HomeFragment.newInstance();
+        ListOfItemsFragment homeFragment = ListOfItemsFragment.newInstance();
         fragmentTransaction.replace(R.id.container, homeFragment, "aa").commit();
     }
 }
