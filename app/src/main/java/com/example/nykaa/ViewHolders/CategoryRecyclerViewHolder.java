@@ -39,9 +39,9 @@ public class CategoryRecyclerViewHolder extends RecyclerView.ViewHolder {
             BuildData();
         } else if (selectedCategory == CategoryConstant.MEN) {
             BuildDataMen();
-        }else if (selectedCategory == CategoryConstant.KIDS) {
+        } else if (selectedCategory == CategoryConstant.KIDS) {
             BuildDataKid();
-        }else if (selectedCategory == CategoryConstant.LUXE) {
+        } else if (selectedCategory == CategoryConstant.LUXE) {
             BuildDataLuxe();
         }
 
@@ -67,13 +67,15 @@ public class CategoryRecyclerViewHolder extends RecyclerView.ViewHolder {
         list.add(new CategoryDataModel(R.drawable.kids, CategoryConstant.KIDS));
         list.add(new CategoryDataModel(R.drawable.luxe, CategoryConstant.LUXE));
     }
+
     private void BuildDataKid() {
         list = new ArrayList<>();
-        list.add(new CategoryDataModel(R.drawable.kids, CategoryConstant.KIDS));
+        list.add(new CategoryDataModel(R.drawable.kids_selected, CategoryConstant.KIDS));
         list.add(new CategoryDataModel(R.drawable.women_nrml, CategoryConstant.WOMEN));
         list.add(new CategoryDataModel(R.drawable.men, CategoryConstant.MEN));
         list.add(new CategoryDataModel(R.drawable.luxe, CategoryConstant.LUXE));
     }
+
     private void BuildDataLuxe() {
         list = new ArrayList<>();
         list.add(new CategoryDataModel(R.drawable.luxe_high, CategoryConstant.LUXE));

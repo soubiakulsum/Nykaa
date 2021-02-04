@@ -1,5 +1,6 @@
 package com.example.nykaa.ViewHolders;
 
+import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.nykaa.Data.homeData.LandingpageDataItem;
+import com.example.nykaa.HelperClass.ImageLoader;
 import com.example.nykaa.R;
 import com.example.nykaa.clickListener.RecyclerViewClickListener;
 
@@ -45,7 +47,7 @@ public class HomeImageTypeViewHolder extends RecyclerView.ViewHolder {
             textView.setVisibility(View.GONE);
             imageView.setVisibility(View.GONE);
             imageViewStrip.setVisibility(View.VISIBLE);
-            Glide.with(item.getContext()).load(landingpageDataItem.getWidgetData().getChildren().get(0).getChildren().get(0).getSource().mobile).into(imageViewStrip);
+            Glide.with(item.getContext()).load(landingpageDataItem.getWidgetData().getChildren().get(0).getChildren().get(0).getSource().mobile).placeholder(new ColorDrawable(ImageLoader.getRandomColor())).into(imageViewStrip);
         }
 
         linearLayout.setOnClickListener(new View.OnClickListener() {

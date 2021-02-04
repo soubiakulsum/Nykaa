@@ -23,8 +23,10 @@
         <activity android:name=".Activities.DisclosureActivity" />
         <activity android:name=".Activities.HelpCenterActivity" />
         <activity android:name=".Activities.DummyActivity"></activity>
+
         <activity android:name=".Activities.MainScreenActivity"></activity>
         <activity android:name=".MainDummyActivity">
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,6 +40,9 @@
         <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.MainScreenActivity" />
         <activity android:name=".Activities.MainActivity">
+
+        </activity>
+        <activity android:name=".MainDummyActivity">
 
         </activity>
         <activity android:name=".Activities.Dashboard_Activity" />
