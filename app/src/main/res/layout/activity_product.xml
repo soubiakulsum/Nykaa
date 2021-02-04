@@ -39,6 +39,7 @@
         </com.kingfisher.easyviewindicator.RecyclerViewIndicator>
 
         <RelativeLayout
+            android:id="@+id/RelativeLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/dp_20">
@@ -245,14 +246,71 @@
                 android:text="@string/policy"
                 android:textSize="@dimen/sp_20" />
 
-           <View
-               android:layout_width="match_parent"
-               android:layout_below="@+id/tvPolicyDetails"
-               android:background="@color/black"
-               android:layout_height="wrap_content"/>
+            <View
+                android:id="@+id/vProductLine"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/tvPolicyDetails"
+                android:layout_marginTop="@dimen/dp_15"
+                android:background="@color/black" />
+
 
 
         </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="@dimen/dp_80"
+                android:layout_weight="1"
+                android:src="@drawable/genuinetext"
+                android:layout_height="@dimen/dp_80"/>
+
+            <ImageView
+                android:layout_width="@dimen/dp_80"
+                android:layout_weight="1"
+                android:src="@drawable/verifiedtext"
+                android:layout_height="@dimen/dp_80"/>
+
+            <ImageView
+                android:layout_width="@dimen/dp_80"
+                android:layout_weight="1"
+                android:src="@drawable/vantext"
+                android:layout_height="@dimen/dp_80"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/dp_20"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/vProductLine2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="@dimen/dp_15"
+                android:background="@color/black" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_below="@+id/vProductLine2"
+                android:layout_marginTop="@dimen/dp_20"
+                android:padding="@dimen/dp_10"
+                android:background="@color/black"
+                android:text="ADD TO BAG"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
+
+
+        </RelativeLayout>
+
 
 
     </LinearLayout>

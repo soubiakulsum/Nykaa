@@ -27,9 +27,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-    }
-}
-
 
         mVideoView = (VideoView) findViewById(R.id.VideoView);
 
@@ -42,7 +39,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onPrepared(MediaPlayer mediaPlayer) {
                 mediaPlayer.setLooping(true);
-            }
+    }
+
         });
     }
 

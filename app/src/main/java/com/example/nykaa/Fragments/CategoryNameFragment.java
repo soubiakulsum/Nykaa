@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.nykaa.Adapters.CategoryNameAdapterCLass;
 import com.example.nykaa.Data.ModelClass.NameModelClass;
 import com.example.nykaa.R;
 
@@ -29,6 +30,12 @@ public class CategoryNameFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public static CategoryNameFragment newInstance(String s) {
+
+        CategoryNameFragment fragment = new CategoryNameFragment();
+        return fragment;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -42,60 +49,33 @@ public class CategoryNameFragment extends Fragment {
         initViews(view);
         buildNameData();
         setRecyclerNameData();
-        
     }
 
     private void setRecyclerNameData() {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         NameRecyclerView.setLayoutManager(linearLayoutManager);
-
+        CategoryNameAdapterCLass categoryNameAdapterCLass = new CategoryNameAdapterCLass(nameModelClassList);
+        NameRecyclerView.setAdapter(categoryNameAdapterCLass);
 
     }
 
     private void buildNameData() {
-
-        nameModelClassList.add(new NameModelClass("Just In",0,1,"",2,NameModelClass.TEXT_TYPE));
-        nameModelClassList.add(new NameModelClass("New Brands",0,1,"",2,NameModelClass.TEXT_TYPE));
-        nameModelClassList.add(new NameModelClass("",R.drawable.levislogo,1,"",1,NameModelClass.IMAGE_STYLES));
-        nameModelClassList.add(new NameModelClass("",R.drawable.indyalogo,1,"",1,NameModelClass.IMAGE_STYLES));
-        nameModelClassList.add(new NameModelClass("",R.drawable.forever21logo,1,"",1,NameModelClass.IMAGE_STYLES));
-        nameModelClassList.add(new NameModelClass("",R.drawable.jockey_logo,1,"",1,NameModelClass.IMAGE_STYLES));
-        nameModelClassList.add(new NameModelClass("",R.drawable.global_logo,1,"",1,NameModelClass.IMAGE_STYLES));
-        nameModelClassList.add(new NameModelClass("",R.drawable.gap_logo,1,"",1,NameModelClass.IMAGE_STYLES));
-        nameModelClassList.add(new NameModelClass("",R.drawable.aerp_logo,1,"",1,NameModelClass.IMAGE_STYLES));
-        nameModelClassList.add(new NameModelClass("",R.drawable.w_logo,1,"",1,NameModelClass.IMAGE_STYLES));
-        nameModelClassList.add(new NameModelClass("",R.drawable.modelaprolabel,1,"",1,NameModelClass.IMAGE_JUSTIN));
-        nameModelClassList.add(new NameModelClass("",R.drawable.korakari,1,"",1,NameModelClass.IMAGE_JUSTIN));
-        nameModelClassList.add(new NameModelClass("",R.drawable.model_magre,1,"",1,NameModelClass.IMAGE_JUSTIN));
-        nameModelClassList.add(new NameModelClass("",R.drawable.model_klas,1,"",1,NameModelClass.IMAGE_JUSTIN));
-        nameModelClassList.add(new NameModelClass("",R.drawable.model_trndydivva,1,"",1,NameModelClass.IMAGE_JUSTIN));
-        nameModelClassList.add(new NameModelClass("",R.drawable.isu_model,1,"",1,NameModelClass.IMAGE_JUSTIN));
-        nameModelClassList.add(new NameModelClass("",1,1,"",R.drawable.mono_model,NameModelClass.IMAGE_TRENDS));
-        nameModelClassList.add(new NameModelClass("",1,1,"",R.drawable.tshirt_model,NameModelClass.IMAGE_TRENDS));
-        nameModelClassList.add(new NameModelClass("",1,1,"",R.drawable.jewellery_model,NameModelClass.IMAGE_TRENDS));
-        nameModelClassList.add(new NameModelClass("",1,1,"",R.drawable.dress_model,NameModelClass.IMAGE_TRENDS));
-        nameModelClassList.add(new NameModelClass("",1,1,"",R.drawable.winter_model,NameModelClass.IMAGE_TRENDS));
-        nameModelClassList.add(new NameModelClass("",1,1,"",R.drawable.bridal_model,NameModelClass.IMAGE_TRENDS));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        nameModelClassList.add(new NameModelClass("Just In",1));
+        nameModelClassList.add(new NameModelClass("New Brands",1));
+        nameModelClassList.add(new NameModelClass("",R.drawable.levislogo,R.drawable.indyalogo));
+        nameModelClassList.add(new NameModelClass("",R.drawable.forever21logo,R.drawable.jockey_logo));
+        nameModelClassList.add(new NameModelClass("",R.drawable.global_logo,R.drawable.gap_logo));
+        nameModelClassList.add(new NameModelClass("",R.drawable.aerp_logo,R.drawable.w_logo));
+        nameModelClassList.add(new NameModelClass(R.drawable.modelaprolabel,"",R.drawable.korakari,""));
+        nameModelClassList.add(new NameModelClass(R.drawable.model_magre,"",R.drawable.model_klas,""));
+        nameModelClassList.add(new NameModelClass(R.drawable.model_trndydivva,"",R.drawable.isu_model,""));
+        nameModelClassList.add(new NameModelClass(R.drawable.modelaprolabel));
+        nameModelClassList.add(new NameModelClass(R.drawable.mono_model,R.drawable.tshirt_model));
+        nameModelClassList.add(new NameModelClass(R.drawable.jewellery_model,R.drawable.dress_model));
+        nameModelClassList.add(new NameModelClass(R.drawable.winter_model,R.drawable.bridal_model));
 
     }
-
 
     private void initViews(View view) {
         NameRecyclerView = view.findViewById(R.id.NameRecyclerView);
