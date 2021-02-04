@@ -2,6 +2,9 @@ package com.example.nykaa.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+import android.os.Bundle;
+
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -9,16 +12,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.VideoView;
 
+
 import com.example.nykaa.R;
 
 public class LoginActivity extends AppCompatActivity {
 
+
+
     private VideoView mVideoView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+    }
+}
+
 
         mVideoView = (VideoView) findViewById(R.id.VideoView);
 
@@ -40,3 +51,4 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 }
+

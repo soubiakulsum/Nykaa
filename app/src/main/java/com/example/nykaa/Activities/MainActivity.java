@@ -10,7 +10,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
 
+
+
 import com.example.nykaa.Fragments.HomeFragment;
+
 import com.example.nykaa.R;
 
 public class MainActivity extends AppCompatActivity {
