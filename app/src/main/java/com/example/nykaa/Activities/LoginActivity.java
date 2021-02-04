@@ -17,18 +17,12 @@ import com.example.nykaa.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-
-
     private VideoView mVideoView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-    }
-}
 
 
         mVideoView = (VideoView) findViewById(R.id.VideoView);
