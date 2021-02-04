@@ -1,7 +1,9 @@
 package com.example.nykaa.Activities;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.example.nykaa.Data.constants.IntentConstants;
 import com.example.nykaa.Fragments.AccountFragment;
 import com.example.nykaa.Fragments.HomeFragment;
 import com.example.nykaa.Fragments.ListOfItemsFragment;
@@ -24,7 +27,15 @@ public class MainScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_screen);
         // launchAccountFragment();
         initView();
-        HomeScreenFragment();
+
+        if (getIntent() != null && getIntent().getExtras() != null) {
+            LaunchListItemFragment(getIntent().getStringExtra(IntentConstants.SEARCH_STUFF));
+            Log.d("thing",getIntent().getStringExtra(IntentConstants.SEARCH_STUFF) );
+        }else {
+            HomeScreenFragment();
+        }
+
+
     }
 
     private ImageView navi1;
@@ -135,6 +146,11 @@ public class MainScreenActivity extends AppCompatActivity {
     public void LaunchListItemFragment(String fileName) {
         constraintLayout.setVisibility(View.GONE);
         getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, ListOfItemsFragment.newInstance(fileName)).addToBackStack("listItem").commit();
+    }
+
+    public void LaunchSearchActivity(){
+        Intent intent = new Intent(MainScreenActivity.this,SearchActivity.class);
+        startActivity(intent);
     }
 
     @Override

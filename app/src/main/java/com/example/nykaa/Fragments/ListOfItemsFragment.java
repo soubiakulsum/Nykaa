@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.nykaa.Activities.MainScreenActivity;
 import com.example.nykaa.Adapters.ItemListAdapter;
 import com.example.nykaa.Data.listItemsData.JsonMember1Item;
 import com.example.nykaa.Data.listItemsData.ListItemsResponseModel;
@@ -68,12 +70,21 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
 
     private View view;
     private TextView tvTitle;
+    private ImageView search;
 
     private void initViews(View view) {
         this.view = view;
         handler = new Handler();
         recyclerView = view.findViewById(R.id.recyclerView);
         tvTitle = view.findViewById(R.id.textView4);
+        search = view.findViewById(R.id.search);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
+                mainScreenActivity.LaunchSearchActivity();
+            }
+        });
         buildData();
     }
 
