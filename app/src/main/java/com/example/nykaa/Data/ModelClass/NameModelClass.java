@@ -13,13 +13,15 @@ public class NameModelClass {
     private int ivBrands;
     private String tvJustInBrands;
     private int ivNewTrends;
+    private int itemViewType;
 
-    public NameModelClass(String arrivals, int ivBrandName, int ivBrands, String tvJustInBrands, int ivNewTrends) {
+    public NameModelClass(String arrivals, int ivBrandName, int ivBrands, String tvJustInBrands, int ivNewTrends, int itemViewType) {
         this.arrivals = arrivals;
         this.ivBrandName = ivBrandName;
         this.ivBrands = ivBrands;
         this.tvJustInBrands = tvJustInBrands;
         this.ivNewTrends = ivNewTrends;
+        this.itemViewType = itemViewType;
     }
 
     public String getArrivals() {
@@ -40,5 +42,9 @@ public class NameModelClass {
 
     public int getIvNewTrends() {
         return ivNewTrends;
+    }
+
+    public int getItemViewType() {
+        return itemViewType;
     }
 }

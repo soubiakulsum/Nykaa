@@ -5,12 +5,12 @@
     android:layout_margin="@dimen/dp_20"
     android:elevation="@dimen/dp_20">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/tvStylesFrom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sanspro"
@@ -20,9 +20,19 @@
 
         <ImageView
             android:id="@+id/ivBrandName"
-            android:layout_width="@dimen/dp_150"
+            android:layout_width="160dp"
             android:layout_height="@dimen/dp_100"
+            android:layout_below="@id/tvStylesFrom"
             android:layout_marginTop="@dimen/dp_10" />
-    </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivBrandName2"
+            android:layout_width="160dp"
+            android:layout_height="@dimen/dp_100"
+            android:layout_marginStart="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_40"
+            android:layout_toEndOf="@id/ivBrandName" />
+
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
