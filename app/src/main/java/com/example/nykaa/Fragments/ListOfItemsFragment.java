@@ -32,8 +32,11 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
         // Required empty public constructor
     }
 
-    public static ListOfItemsFragment newInstance() {
+    public static ListOfItemsFragment newInstance(String fileName) {
         ListOfItemsFragment fragment = new ListOfItemsFragment();
+        Bundle args = new Bundle();
+        args.putString("fileName", fileName);
+        fragment.setArguments(args);
         return fragment;
     }
 
@@ -41,7 +44,7 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-
+            fileName = getArguments().getString("fileName");
         }
     }
 
@@ -58,7 +61,7 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Log.d("stuff","working");
+        Log.d("stuff", "working");
         initViews(view);
     }
 
@@ -82,10 +85,12 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
             loadJsonFromAsset();
         }
     };
+    private String fileName;
 
     private void loadJsonFromAsset() {
         try {
-            InputStream inputStream = getActivity().getAssets().open("shoes.json");
+            InputStream inputStream = getActivity().getAssets().open(fileName);
+
             int data = inputStream.read();
             StringBuilder stringBuilder = new StringBuilder();
             while (data != -1) {
@@ -96,7 +101,7 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
             buildDataFromJson(stringBuilder.toString());
         } catch (Exception e) {
             e.printStackTrace();
-            Log.e("stuff", e.getMessage());
+            Log.e("stufff", e.getMessage());
         }
     }
 
@@ -108,6 +113,7 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
         }.getType();
         ListItemsResponseModel response = new Gson().fromJson(json, type);
         listItemsData = response.getListing().getProducts().getJsonMember1();
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -123,6 +129,11 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
 
     @Override
     public void OnCategoryItemClicked(int item) {
+
+    }
+
+    @Override
+    public void OnItemListClicked(String fileName) {
 
     }
 }

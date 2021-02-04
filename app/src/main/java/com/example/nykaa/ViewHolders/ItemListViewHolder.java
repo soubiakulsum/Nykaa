@@ -1,5 +1,6 @@
 package com.example.nykaa.ViewHolders;
 
+import android.graphics.Paint;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,6 +25,8 @@ public class ItemListViewHolder extends RecyclerView.ViewHolder {
     private TextView tvDiscountPrice;
     private TextView tvPrice;
     private TextView tvDiscount;
+    private TextView tvTag;
+    private TextView tvRupee;
     private View view;
 
     private void initView(View itemView) {
@@ -34,14 +37,24 @@ public class ItemListViewHolder extends RecyclerView.ViewHolder {
         tvDiscountPrice = itemView.findViewById(R.id.tvDiscountPrice);
         tvPrice = itemView.findViewById(R.id.tvPrice);
         tvDiscount = itemView.findViewById(R.id.tvDiscount);
+        tvTag = itemView.findViewById(R.id.tvTag);
+        tvRupee = itemView.findViewById(R.id.textView3);
     }
 
     public void setData(JsonMember1Item data, RecyclerViewClickListener recyclerViewClickListener) {
         ImageLoader.loadImage(view, imageView, data.getImageUrl());
         tvProductName.setText(data.getTitle());
         tvSubTitle.setText(data.getSubTitle());
-        tvDiscountPrice.setText(data.getDiscountedPrice()+"");
-        tvPrice.setText(data.getPrice()+"");
+        tvDiscountPrice.setText(data.getDiscountedPrice() + "");
+        tvPrice.setText(data.getPrice() + "");
+        tvPrice.setPaintFlags(tvPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        tvRupee.setPaintFlags(tvRupee.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         tvDiscount.setText(data.getDiscount() + "% off");
+        if (data.getTag().getTitle() != null && !data.getTag().getTitle().equals("")) {
+            tvTag.setVisibility(View.VISIBLE);
+            tvTag.setText(data.getTag().getTitle());
+        } else {
+            tvTag.setVisibility(View.GONE);
+        }
     }
 }

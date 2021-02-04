@@ -2,6 +2,7 @@ package com.example.nykaa.ViewHolders;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,22 +21,30 @@ public class ItemHouseOfNykaaViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView imgaveView;
     private TextView textView;
+    private LinearLayout linearLayout;
     private View view;
 
     private void initView(View itemView) {
         view = itemView;
         imgaveView = itemView.findViewById(R.id.imgaveView);
         textView = itemView.findViewById(R.id.textView);
+        linearLayout = itemView.findViewById(R.id.linearLayout);
     }
 
     public void setData(ChildrenItem childrenItem, RecyclerViewClickListener recyclerViewClickListener) {
         ImageLoader.loadImage(view, imgaveView, childrenItem.getChildren().get(0).getSource().web);
-        if(childrenItem.getParameters().getDescription() == null || childrenItem.getParameters().getDescription().equals("")){
+        if (childrenItem.getParameters().getDescription() == null || childrenItem.getParameters().getDescription().equals("")) {
             textView.setVisibility(View.GONE);
-        }else{
+        } else {
             textView.setVisibility(View.VISIBLE);
             textView.setText(childrenItem.getParameters().getDescription());
         }
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recyclerViewClickListener.OnItemListClicked("shoes.json");
+            }
+        });
 
     }
 }

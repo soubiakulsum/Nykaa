@@ -18,20 +18,14 @@
         <activity android:name=".Activities.Responsible_Activity" />
         <activity android:name=".Activities.DisclosureActivity" />
         <activity android:name=".Activities.HelpCenterActivity" />
-        <activity android:name=".Activities.DummyActivity" >
-
-
-
-        </activity>
-        <activity android:name=".Activities.MainScreenActivity" />
-
+        <activity android:name=".Activities.DummyActivity"></activity>
+        <activity android:name=".Activities.MainScreenActivity"></activity>
         <activity android:name=".MainDummyActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".Activities.Dashboard_Activity" />
         <activity android:name=".Activities.Verification_OTP" />
