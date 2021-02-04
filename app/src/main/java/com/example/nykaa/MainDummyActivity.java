@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.example.nykaa.Fragments.HomeFragment;
 import com.example.nykaa.Fragments.ListOfItemsFragment;
+import com.example.nykaa.Fragments.SalesFragment;
 
 public class MainDummyActivity extends AppCompatActivity {
 
@@ -19,7 +20,7 @@ public class MainDummyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_dummy);
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        ListOfItemsFragment homeFragment = ListOfItemsFragment.newInstance();
+        ListOfItemsFragment homeFragment = ListOfItemsFragment.newInstance("shoes.json");
         fragmentTransaction.replace(R.id.container, homeFragment, "aa").commit();
     }
 }

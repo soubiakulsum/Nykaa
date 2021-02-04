@@ -1,8 +1,8 @@
 package com.example.nykaa.ViewHolders;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,6 +22,7 @@ public class HomeImageTypeViewHolder extends RecyclerView.ViewHolder {
     private TextView textView;
     private ImageView imageView;
     private ImageView imageViewStrip;
+    private LinearLayout linearLayout;
     private View item;
 
     private void initView(View itemView) {
@@ -29,11 +30,12 @@ public class HomeImageTypeViewHolder extends RecyclerView.ViewHolder {
         textView = itemView.findViewById(R.id.textView);
         imageView = itemView.findViewById(R.id.imageView);
         imageViewStrip = itemView.findViewById(R.id.imageViewStrip);
+        linearLayout = itemView.findViewById(R.id.linearLayout);
     }
 
     public void setData(LandingpageDataItem landingpageDataItem, RecyclerViewClickListener recyclerViewClickListener) {
 
-        String url =landingpageDataItem.getWidgetData().getChildren().get(0).getChildren().get(0).getSource().mobile;
+        String url = landingpageDataItem.getWidgetData().getChildren().get(0).getChildren().get(0).getSource().mobile;
         if (url.charAt(url.length() - 1) == 'f' && url.charAt(url.length() - 2) == 'i' && url.charAt(url.length() - 2) == 'i') {
             textView.setText(landingpageDataItem.getWidgetData().getParameters().getTitle());
             imageViewStrip.setVisibility(View.GONE);
@@ -46,7 +48,16 @@ public class HomeImageTypeViewHolder extends RecyclerView.ViewHolder {
             Glide.with(item.getContext()).load(landingpageDataItem.getWidgetData().getChildren().get(0).getChildren().get(0).getSource().mobile).into(imageViewStrip);
         }
 
-      // Log.d("stugg", landingpageDataItem.getWidgetData().getParameters().getTitle());
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recyclerViewClickListener.OnItemListClicked("dress.json");
+            }
+        });
+
+
+
+        // Log.d("stugg", landingpageDataItem.getWidgetData().getParameters().getTitle());
 
     }
 }

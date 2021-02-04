@@ -2,6 +2,7 @@ package com.example.nykaa.ViewHolders;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,12 +22,14 @@ public class ItemSlidingWidgetRecyclerViewHolder extends RecyclerView.ViewHolder
 
     private ImageView image;
     private TextView text;
+    private LinearLayout linearLayout;
     private View view;
 
     private void initViews(View itemView) {
         view = itemView;
         image = itemView.findViewById(R.id.image);
         text = itemView.findViewById(R.id.text);
+        linearLayout = itemView.findViewById(R.id.linearLayout);
     }
 
     public void SetData(ChildrenItem childrenItem, RecyclerViewClickListener recyclerViewClickListener) {
@@ -36,6 +39,14 @@ public class ItemSlidingWidgetRecyclerViewHolder extends RecyclerView.ViewHolder
         } else {
             text.setText(childrenItem.getParameters().getDescription());
         }
+
+
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recyclerViewClickListener.OnItemListClicked("watches.json");
+            }
+        });
 
         String url = childrenItem.getChildren().get(0).source.web;
         if (url.charAt(url.length() - 1) == 'f' && url.charAt(url.length() - 2) == 'i' && url.charAt(url.length() - 2) == 'i') {

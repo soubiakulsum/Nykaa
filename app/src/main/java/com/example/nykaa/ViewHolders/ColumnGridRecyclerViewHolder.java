@@ -42,7 +42,8 @@ public class ColumnGridRecyclerViewHolder extends RecyclerView.ViewHolder {
             textView.setVisibility(View.VISIBLE);
             textView.setText(landingpageDataItem.getWidgetData().getParameters().getTitle());
         }
-        if (landingpageDataItem.getWidgetData().getParameters().getAppBkgType() != null && landingpageDataItem.getWidgetData().getParameters().getAppBkgType().equals("color")) {
+        if (landingpageDataItem.getWidgetData().getParameters().getAppBkgType() != null && landingpageDataItem.getWidgetData().getParameters().getAppBkgType().equals("color")&& landingpageDataItem.getWidgetData().getParameters().getAppBkgColor()!=null && !landingpageDataItem.getWidgetData().getParameters().getAppBkgColor().equals("")) {
+
             linearLayout.setBackgroundColor(Color.parseColor(landingpageDataItem.getWidgetData().getParameters().getAppBkgColor()));
         } else {
             linearLayout.setBackgroundColor(Color.WHITE);
