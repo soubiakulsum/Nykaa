@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -66,11 +67,13 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
     }
 
     private View view;
+    private TextView tvTitle;
 
     private void initViews(View view) {
         this.view = view;
         handler = new Handler();
         recyclerView = view.findViewById(R.id.recyclerView);
+        tvTitle = view.findViewById(R.id.textView4);
         buildData();
     }
 
@@ -117,13 +120,13 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-
+                tvTitle.setText(response.getListing().getTitle());
                 GridLayoutManager gridLayoutManager = new GridLayoutManager(view.getContext(), 2, LinearLayoutManager.VERTICAL, false);
                 ItemListAdapter itemListAdapter = new ItemListAdapter(listItemsData, ListOfItemsFragment.this);
                 recyclerView.setLayoutManager(gridLayoutManager);
                 recyclerView.setAdapter(itemListAdapter);
             }
-        }, 3000);
+        }, 1000);
 
     }
 
