@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nykaa">
-
     <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,22 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nykaa">
-
         <activity android:name=".Activities.CardItemActivity">
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-
+        <activity android:name=".Activities.ProductActivity">
+        </activity>
         <activity android:name=".Activities.TestActivity">
-
         </activity>
         <activity android:name=".Activities.SearchActivity" />
-
-
         <activity android:name=".Activities.Logout_Activity" />
         <activity android:name=".Activities.Privacy_Activity" />
         <activity android:name=".Activities.Terms_Activity" />
@@ -34,25 +23,21 @@
         <activity android:name=".Activities.Responsible_Activity" />
         <activity android:name=".Activities.DisclosureActivity" />
         <activity android:name=".Activities.HelpCenterActivity" />
-
         <activity android:name=".Activities.DummyActivity"></activity>
-        <activity android:name=".Activities.MainScreenActivity" />
-        <activity android:name=".Activities.MainDummyActivity">
+        <activity android:name=".Activities.MainScreenActivity" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-
+        </activity>
+        <activity android:name=".Activities.MainDummyActivity">
         </activity>
         <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.MainActivity"></activity>
-
         <activity android:name=".Activities.Dashboard_Activity" />
         <activity android:name=".Activities.Verification_OTP" />
         <activity android:name=".Activities.Phone_Authentication" />
     </application>
-
 </manifest>
