@@ -31,16 +31,14 @@
         <activity android:name=".Activities.SearchActivity" />
 
 
-        <activity android:name=".Activities.Logout_Activity" />
         <activity android:name=".Activities.Privacy_Activity" />
         <activity android:name=".Activities.Terms_Activity" />
         <activity android:name=".Activities.Shipping_Activity" />
         <activity android:name=".Activities.Responsible_Activity" />
         <activity android:name=".Activities.DisclosureActivity" />
         <activity android:name=".Activities.HelpCenterActivity" />
-        <activity android:name=".Activities.DummyActivity">
+        <activity android:name=".Activities.DummyActivity"/>
 
-        <activity android:name=".Activities.DummyActivity"></activity>
         <activity android:name=".Activities.MainScreenActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,8 +46,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.MainScreenActivity" />
-        <activity android:name=".MainDummyActivity" />
         <activity android:name=".Activities.MainDummyActivity">
 
         </activity>
@@ -59,8 +55,6 @@
         <activity android:name=".Activities.Dashboard_Activity" />
         <activity android:name=".Activities.Verification_OTP" />
         <activity android:name=".Activities.Phone_Authentication" />
-        <activity android:name=".Activities.LoginActivity" />
-        <activity android:name=".Activities.MainActivity" />
     </application>
 
 </manifest>
