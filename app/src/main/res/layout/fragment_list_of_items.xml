@@ -4,7 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Fragments.ListOfItemsFragment">
+
+
+    <com.yqritc.scalablevideoview.ScalableVideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:scalableType="fitCenter" />
+
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/actionBar"

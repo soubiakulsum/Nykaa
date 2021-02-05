@@ -23,7 +23,9 @@ import com.example.nykaa.R;
 import com.example.nykaa.clickListener.RecyclerViewClickListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.yqritc.scalablevideoview.ScalableVideoView;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.util.List;
@@ -63,15 +65,28 @@ public class HomeFragment extends Fragment implements RecyclerViewClickListener 
     private RecyclerView recyclerview;
     View view1;
     private Handler handler;
+    private ScalableVideoView mBackgroundVideo;
 
     private void initView(View view) {
         view1 = view;
         handler = new Handler();
         recyclerview = view.findViewById(R.id.recyclerview);
+        mBackgroundVideo = view.findViewById(R.id.mBackgroundVideo);
+        backgroundVideo();
         buildData();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerview.setLayoutManager(linearLayoutManager);
 
+    }
+    private void backgroundVideo() {
+        try {
+            mBackgroundVideo.setRawData(R.raw.gify);
+            mBackgroundVideo.setLooping(true);
+            mBackgroundVideo.prepare(mp -> mBackgroundVideo.start());
+        } catch (IOException e) {
+            e.printStackTrace();
+            //ignore
+        }
     }
 
     public void buildData() {
@@ -117,6 +132,7 @@ public class HomeFragment extends Fragment implements RecyclerViewClickListener 
             public void run() {
                 homeRecyclerViewAdapter = new HomeRecyclerViewAdapter(HomeFragment.this, homeData);
                 recyclerview.setAdapter(homeRecyclerViewAdapter);
+                mBackgroundVideo.setVisibility(View.GONE);
             }
         }, 1000);
 
@@ -184,6 +200,7 @@ public class HomeFragment extends Fragment implements RecyclerViewClickListener 
             public void run() {
                 homeRecyclerViewAdapter.UpdataData(itemCategory, homeData);
                 recyclerview.setAdapter(homeRecyclerViewAdapter);
+                mBackgroundVideo.setVisibility(View.GONE);
             }
         });
 

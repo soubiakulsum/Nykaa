@@ -25,6 +25,8 @@ import com.example.nykaa.R;
 import com.example.nykaa.clickListener.RecyclerViewClickListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.yqritc.scalablevideoview.ScalableType;
+import com.yqritc.scalablevideoview.ScalableVideoView;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -75,6 +77,7 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
     private View view;
     private TextView tvTitle;
     private ImageView search;
+    private ScalableVideoView mBackgroundVideo;
 
     private void initViews(View view) {
         this.view = view;
@@ -82,6 +85,8 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
         recyclerView = view.findViewById(R.id.recyclerView);
         tvTitle = view.findViewById(R.id.textView4);
         search = view.findViewById(R.id.search);
+        mBackgroundVideo = view.findViewById(R.id.videoView);
+        backgroundVideo();
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -191,6 +196,7 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
                 ItemListAdapter itemListAdapter = new ItemListAdapter(listItemsData, ListOfItemsFragment.this);
                 recyclerView.setLayoutManager(gridLayoutManager);
                 recyclerView.setAdapter(itemListAdapter);
+                mBackgroundVideo.setVisibility(View.GONE);
             }
         }, 1000);
 
@@ -211,4 +217,17 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
         MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
         mainScreenActivity.LaunchProductDetailActivity(fileName);
     }
+
+
+    private void backgroundVideo() {
+        try {
+            mBackgroundVideo.setRawData(R.raw.gify);
+            mBackgroundVideo.setLooping(true);
+            mBackgroundVideo.prepare(mp -> mBackgroundVideo.start());
+        } catch (IOException e) {
+            e.printStackTrace();
+            //ignore
+        }
+    }
+
 }

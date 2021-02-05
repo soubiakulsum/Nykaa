@@ -23,7 +23,9 @@ import com.example.nykaa.R;
 import com.example.nykaa.clickListener.RecyclerViewClickListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.yqritc.scalablevideoview.ScalableVideoView;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.util.List;
@@ -57,11 +59,14 @@ public class SalesFragment extends Fragment implements RecyclerViewClickListener
     private RecyclerView recyclerview;
     View view1;
     private Handler handler;
+    private ScalableVideoView mBackgroundVideo;
 
     private void initView(View view) {
         view1 = view;
         handler = new Handler();
         recyclerview = view.findViewById(R.id.recyclerview);
+        mBackgroundVideo = view.findViewById(R.id.mBackgroundVideo);
+        backgroundVideo();
         buildData();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerview.setLayoutManager(linearLayoutManager);
@@ -126,10 +131,22 @@ public class SalesFragment extends Fragment implements RecyclerViewClickListener
             public void run() {
                 SalesAdapter salesAdapter = new SalesAdapter(SalesFragment.this, salesData);
                 recyclerview.setAdapter(salesAdapter);
+                mBackgroundVideo.setVisibility(View.GONE);
             }
         }, 3000);
 
 
+    }
+
+    private void backgroundVideo() {
+        try {
+            mBackgroundVideo.setRawData(R.raw.gify);
+            mBackgroundVideo.setLooping(true);
+            mBackgroundVideo.prepare(mp -> mBackgroundVideo.start());
+        } catch (IOException e) {
+            e.printStackTrace();
+            //ignore
+        }
     }
 
 }
