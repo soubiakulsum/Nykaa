@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.nykaa.Activities.ChatWithUs;
 import com.example.nykaa.Activities.HelpCenterActivity;
@@ -38,11 +39,11 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
     Button mBtnRate;
     Button mBtnLogout;
 
-    Button mtvMyOrder;
+    TextView mtvMyOrder;
 
-    Button mtvWishlist;
+  TextView mtvWishlist;
 
-    Button mtvChat;
+    TextView mtvChat;
 
 
     private static final String ARG_PARAM1 = "param1";

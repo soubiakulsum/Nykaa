@@ -142,7 +142,6 @@ public class ProductActivity extends AppCompatActivity {
     public void ADDTOBAG(View view) {
 
         Intent intent = new Intent(ProductActivity.this,CardItemActivity.class);
-        intent.putExtra("Jaipur",tvJaipur.getText().toString());
         startActivity(intent);
 
     }
