@@ -272,9 +272,6 @@ public class BrandsFragment extends Fragment implements OnItemsClickListeners, O
 
             case R.id.SearchBrand:
 
-
-
-
         }
     }
 

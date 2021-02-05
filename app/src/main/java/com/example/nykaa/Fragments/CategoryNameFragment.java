@@ -23,11 +23,16 @@ import java.util.List;
 public class CategoryNameFragment extends Fragment {
 
     private RecyclerView NameRecyclerView;
-    private List<NameModelClass>nameModelClassList = new ArrayList<>();
+    private List<NameModelClass> nameModelClassList = new ArrayList<>();
 
 
     public CategoryNameFragment() {
         // Required empty public constructor
+    }
+
+    public static CategoryNameFragment newInstance(){
+        CategoryNameFragment categoryNameFragment = new CategoryNameFragment();
+        return categoryNameFragment;
     }
 
     public static CategoryNameFragment newInstance(String s) {
@@ -76,27 +81,25 @@ public class CategoryNameFragment extends Fragment {
 //        nameModelClassList.add(new NameModelClass(R.drawable.winter_model,R.drawable.bridal_model));
 
 
-        nameModelClassList.add(new NameModelClass("Just In",1,"",0,0,0,"",0,"",0,0,0,NameModelClass.TEXT_TYPE));
-        nameModelClassList.add(new NameModelClass("New Brands",1,"",0,0,0,"",0,"",0,0,0,NameModelClass.TEXT_TYPE));
-        nameModelClassList.add(new NameModelClass("",0,"",R.drawable.levislogo,R.drawable.indyalogo,0,"",0,"",0,0,0,NameModelClass.IMAGE_STYLES));
-        nameModelClassList.add(new NameModelClass("",0,"",R.drawable.forever21logo,R.drawable.jockey_logo,0,"",0,"",0,0,0,NameModelClass.IMAGE_STYLES));
-        nameModelClassList.add(new NameModelClass("",0,"",R.drawable.global_logo,R.drawable.gap_logo,0,"",0,"",0,0,0,NameModelClass.IMAGE_STYLES));
-        nameModelClassList.add(new NameModelClass("",0,"",R.drawable.aerp_logo,R.drawable.w_logo,0,"",0,"",0,0,0,NameModelClass.IMAGE_STYLES));
-        nameModelClassList.add(new NameModelClass("",0,"",0,0,R.drawable.modelaprolabel,"Aaprobel",R.drawable.korakari,"Korakari",0,0,0,NameModelClass.IMAGE_JUSTIN));
-        nameModelClassList.add(new NameModelClass("",0,"",0,0,R.drawable.model_magre,"Magre",R.drawable.model_klas,"Klas",0,0,0,NameModelClass.IMAGE_JUSTIN));
-        nameModelClassList.add(new NameModelClass("",0,"",0,0,R.drawable.model_trndydivva,"Trendy Divva",R.drawable.isu_model,"IS.U",0,0,0,NameModelClass.IMAGE_JUSTIN));
-        nameModelClassList.add(new NameModelClass("",0,"",0,0,0,"",0,"",R.drawable.flag_papua_new_guinea,0,0,NameModelClass.IMAGE_SHOPNEW));
-        nameModelClassList.add(new NameModelClass("",0,"",0,0,0,"",0,"",0,R.drawable.mono_model,R.drawable.tshirt_model,NameModelClass.IMAGE_TRENDS));
-        nameModelClassList.add(new NameModelClass("",0,"",0,0,0,"",0,"",0,R.drawable.jewellery_model,R.drawable.dress_model,NameModelClass.IMAGE_TRENDS));
-        nameModelClassList.add(new NameModelClass("",0,"",0,0,0,"",0,"",0,R.drawable.bridal_model,R.drawable.winter_model,NameModelClass.IMAGE_TRENDS));
-
-
-
+        nameModelClassList.add(new NameModelClass("Just In", 1, "", 0, 0, 0, "", 0, "", 0, 0, 0, NameModelClass.TEXT_TYPE));
+        nameModelClassList.add(new NameModelClass("New Brands", 1, "", 0, 0, 0, "", 0, "", 0, 0, 0, NameModelClass.TEXT_TYPE));
+        nameModelClassList.add(new NameModelClass("", 0, "", R.drawable.levislogo, R.drawable.indyalogo, 0, "", 0, "", 0, 0, 0, NameModelClass.IMAGE_STYLES));
+        nameModelClassList.add(new NameModelClass("", 0, "", R.drawable.forever21logo, R.drawable.jockey_logo, 0, "", 0, "", 0, 0, 0, NameModelClass.IMAGE_STYLES));
+        nameModelClassList.add(new NameModelClass("", 0, "", R.drawable.global_logo, R.drawable.gap_logo, 0, "", 0, "", 0, 0, 0, NameModelClass.IMAGE_STYLES));
+        nameModelClassList.add(new NameModelClass("", 0, "", R.drawable.aerp_logo, R.drawable.w_logo, 0, "", 0, "", 0, 0, 0, NameModelClass.IMAGE_STYLES));
+        nameModelClassList.add(new NameModelClass("", 0, "", 0, 0, R.drawable.modelaprolabel, "Aaprobel", R.drawable.korakari, "Korakari", 0, 0, 0, NameModelClass.IMAGE_JUSTIN));
+        nameModelClassList.add(new NameModelClass("", 0, "", 0, 0, R.drawable.model_magre, "Magre", R.drawable.model_klas, "Klas", 0, 0, 0, NameModelClass.IMAGE_JUSTIN));
+        nameModelClassList.add(new NameModelClass("", 0, "", 0, 0, R.drawable.model_trndydivva, "Trendy Divva", R.drawable.isu_model, "IS.U", 0, 0, 0, NameModelClass.IMAGE_JUSTIN));
+        nameModelClassList.add(new NameModelClass("", 0, "", 0, 0, 0, "", 0, "", R.drawable.flag_papua_new_guinea, 0, 0, NameModelClass.IMAGE_SHOPNEW));
+        nameModelClassList.add(new NameModelClass("", 0, "", 0, 0, 0, "", 0, "", 0, R.drawable.mono_model, R.drawable.tshirt_model, NameModelClass.IMAGE_TRENDS));
+        nameModelClassList.add(new NameModelClass("", 0, "", 0, 0, 0, "", 0, "", 0, R.drawable.jewellery_model, R.drawable.dress_model, NameModelClass.IMAGE_TRENDS));
+        nameModelClassList.add(new NameModelClass("", 0, "", 0, 0, 0, "", 0, "", 0, R.drawable.bridal_model, R.drawable.winter_model, NameModelClass.IMAGE_TRENDS));
 
 
     }
 
     private void initViews(View view) {
-        NameRecyclerView = view.findViewById(R.id.NameRecyclerView);
+//        NameRecyclerView = view.findViewById(R.id.NameRecyclerView);
+//    }
     }
 }
