@@ -113,7 +113,7 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
         @Override
         public void run() {
             try {
-                URL url = new URL("https://www.nykaafashion.com/catalogsearch/result/?q="+fileName+"&searchType=Manual&internalSearchTerm="+fileName);
+                URL url = new URL("https://www.nykaafashion.com/catalogsearch/result/?q=" + fileName + "&searchType=Manual&internalSearchTerm=" + fileName);
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                 InputStream inputStream = urlConnection.getInputStream();
 
@@ -204,5 +204,11 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
     @Override
     public void OnItemListClicked(String fileName) {
 
+    }
+
+    @Override
+    public void OnProductItemClicked(String fileName) {
+        MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
+        mainScreenActivity.LaunchProductDetailActivity(fileName);
     }
 }
