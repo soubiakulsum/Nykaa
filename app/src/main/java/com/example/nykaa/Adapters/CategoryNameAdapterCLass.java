@@ -13,6 +13,7 @@ import com.example.nykaa.ViewHolders.CategoryArrivalsViewHolder;
 import com.example.nykaa.ViewHolders.CategoryBrandsViewHolder;
 import com.example.nykaa.ViewHolders.CategoryNewStylesViewHolder;
 import com.example.nykaa.ViewHolders.CategoryNewTrendsViewHolder;
+import com.example.nykaa.ViewHolders.CategoryShopViewHolder;
 
 import java.util.List;
 
@@ -34,15 +35,19 @@ public class CategoryNameAdapterCLass extends RecyclerView.Adapter<RecyclerView.
                 return new CategoryArrivalsViewHolder(view);
 
             case NameModelClass.IMAGE_STYLES:
-                View stylesview = LayoutInflater.from(parent.getContext()).inflate(R.layout.text_item_layout, parent, false);
+                View stylesview = LayoutInflater.from(parent.getContext()).inflate(R.layout.newstyles_item_layout, parent, false);
                 return new CategoryNewStylesViewHolder(stylesview);
 
             case NameModelClass.IMAGE_JUSTIN:
-                View justInView = LayoutInflater.from(parent.getContext()).inflate(R.layout.text_item_layout, parent, false);
+                View justInView = LayoutInflater.from(parent.getContext()).inflate(R.layout.top_item_layout, parent, false);
                 return new CategoryBrandsViewHolder(justInView);
 
+            case NameModelClass.IMAGE_SHOPNEW:
+                View ShopNewview = LayoutInflater.from(parent.getContext()).inflate(R.layout.shopnew_item_layout, parent, false);
+                return new CategoryShopViewHolder(ShopNewview);
+
             case NameModelClass.IMAGE_TRENDS:
-                View TrendsView = LayoutInflater.from(parent.getContext()).inflate(R.layout.text_item_layout, parent, false);
+                View TrendsView = LayoutInflater.from(parent.getContext()).inflate(R.layout.newbrands_item_layout, parent, false);
                 return new CategoryNewTrendsViewHolder(TrendsView);
         }
 

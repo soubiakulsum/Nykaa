@@ -10,6 +10,7 @@ public class NameModelClass {
     public static final int IMAGE_STYLES = 1;
     public static final int TEXT_STYLES = 3;
     public static final int IMAGE_JUSTIN = 2;
+    public static final int IMAGE_SHOPNEW = 4;
     public static final int IMAGE_TRENDS = 5;
 
 
@@ -43,32 +44,32 @@ public class NameModelClass {
         this.ivNewTrends2 = ivNewTrends2;
     }
 
-    public NameModelClass(String tvTopJustIn, int vLineArrival) {
-        this.tvTopJustIn = tvTopJustIn;
-        this.vLineArrival = vLineArrival;
-    }
-
-    public NameModelClass(String tvStylesFrom, int ivNewStyleBrandName, int ivBrandName2) {
-        this.tvStylesFrom = tvStylesFrom;
-        this.ivNewStyleBrandName = ivNewStyleBrandName;
-        this.ivBrandName2 = ivBrandName2;
-    }
-
-    public NameModelClass(int ivBrandsName, String tvJustInBrandsName, int ivBrandsName2, String tvJustInBrandsName2) {
-        this.ivBrandsName = ivBrandsName;
-        this.tvJustInBrandsName = tvJustInBrandsName;
-        this.ivBrandsName2 = ivBrandsName2;
-        this.tvJustInBrandsName2 = tvJustInBrandsName2;
-    }
-
-    public NameModelClass(int ivShopNew) {
-        this.ivShopNew = ivShopNew;
-    }
-
-    public NameModelClass(int ivNewTrends, int ivNewTrends2) {
-        this.ivNewTrends = ivNewTrends;
-        this.ivNewTrends2 = ivNewTrends2;
-    }
+//    public NameModelClass(String tvTopJustIn, int vLineArrival) {
+//        this.tvTopJustIn = tvTopJustIn;
+//        this.vLineArrival = vLineArrival;
+//    }
+//
+//    public NameModelClass(String tvStylesFrom, int ivNewStyleBrandName, int ivBrandName2) {
+//        this.tvStylesFrom = tvStylesFrom;
+//        this.ivNewStyleBrandName = ivNewStyleBrandName;
+//        this.ivBrandName2 = ivBrandName2;
+//    }
+//
+//    public NameModelClass(int ivBrandsName, String tvJustInBrandsName, int ivBrandsName2, String tvJustInBrandsName2) {
+//        this.ivBrandsName = ivBrandsName;
+//        this.tvJustInBrandsName = tvJustInBrandsName;
+//        this.ivBrandsName2 = ivBrandsName2;
+//        this.tvJustInBrandsName2 = tvJustInBrandsName2;
+//    }
+//
+//    public NameModelClass(int ivShopNew) {
+//        this.ivShopNew = ivShopNew;
+//    }
+//
+//    public NameModelClass(int ivNewTrends, int ivNewTrends2) {
+//        this.ivNewTrends = ivNewTrends;
+//        this.ivNewTrends2 = ivNewTrends2;
+//    }
 
     public String getTvTopJustIn() {
         return tvTopJustIn;

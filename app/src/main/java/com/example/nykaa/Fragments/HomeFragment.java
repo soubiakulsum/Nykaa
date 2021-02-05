@@ -146,7 +146,7 @@ public class HomeFragment extends Fragment implements RecyclerViewClickListener 
 
     @Override
     public void OnItemListClicked(String fileName) {
-        Toast.makeText(getActivity(), fileName, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getActivity(), fileName, Toast.LENGTH_SHORT).show();
         MainScreenActivity mainScreenActivity = (MainScreenActivity) getActivity();
         mainScreenActivity.LaunchListItemFragment(fileName);
     }
