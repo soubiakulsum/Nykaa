@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 public class BannerImagesItem{
 
 	@SerializedName("aspect_ratio")
-	private int aspectRatio;
+	private Object aspectRatio;
 
 	@SerializedName("native_landing")
 	private String nativeLanding;
@@ -28,7 +28,7 @@ public class BannerImagesItem{
 	@SerializedName("url")
 	private String url;
 
-	public int getAspectRatio(){
+	public Object getAspectRatio(){
 		return aspectRatio;
 	}
 

@@ -73,6 +73,16 @@ public class SalesFragment extends Fragment implements RecyclerViewClickListener
         Toast.makeText(getActivity(), item + "", Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public void OnItemListClicked(String fileName) {
+
+    }
+
+    @Override
+    public void OnProductItemClicked(String fileName) {
+
+    }
+
 
     public void buildData() {
         Thread thread = new Thread(runnable);

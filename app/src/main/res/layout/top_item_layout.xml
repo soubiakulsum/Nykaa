@@ -5,12 +5,13 @@
     android:layout_margin="@dimen/dp_20"
     android:elevation="@dimen/dp_20">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/tvTopJustIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sanspro"
@@ -19,19 +20,44 @@
             android:textSize="@dimen/sp_23" />
 
         <ImageView
-            android:id="@+id/ivBrands"
+            android:id="@+id/ivBrandsModels"
             android:layout_width="@dimen/dp_150"
             android:layout_height="@dimen/dp_200"
+            android:layout_below="@id/tvTopJustIn"
             android:layout_marginTop="@dimen/dp_20" />
 
         <TextView
+            android:id="@+id/tvJustInBrandsName"
             android:layout_width="wrap_content"
-            android:id="@+id/tvJustInBrands"
             android:layout_height="wrap_content"
+            android:layout_below="@id/ivBrandsModels"
             android:layout_marginTop="@dimen/dp_6"
+            android:layout_alignParentStart="true"
             android:fontFamily="@font/sanspro"
             android:textColor="@color/black"
             android:textSize="@dimen/sp_25" />
-    </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivBrandsModels2"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_200"
+            android:layout_marginStart="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_50"
+            android:layout_toRightOf="@id/ivBrandsModels" />
+
+        <TextView
+            android:id="@+id/tvJustInBrandsName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivBrandsModels2"
+            android:layout_alignStart="@+id/ivBrandsModels2"
+            android:layout_alignEnd="@+id/ivBrandsModels2"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/sanspro"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_25" />
+
+
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

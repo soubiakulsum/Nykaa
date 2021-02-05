@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.CardItemActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/backgroundShopping"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="4dp"
+            app:drawableStartCompat="@drawable/shoppingbag_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="@+id/backgroundShopping"
+            app:layout_constraintTop_toTopOf="@+id/backgroundShopping" />
+
+        <TextView
+            android:id="@+id/tvShoppingBag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/sanspro"
+            android:text="SHOPPING BAG (1)"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/backgroundShopping"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:elevation="@dimen/dp_10"
+            app:layout_constraintTop_toBottomOf="@id/backgroundShopping"
+            tools:layout_editor_absoluteX="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/sanspro"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:text="This Order is eligible for free shipping"
+                android:textColor="@color/black" />
+
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/ivProductImage"
+            android:layout_width="104dp"
+            android:layout_height="158dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/saree"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+        <TextView
+            android:id="@+id/tvProductDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="36dp"
+            android:gravity="center"
+            android:text="Shaily MultiColour Georgette Floral \n Saree With Unstitched Blouse Piece\n(Set Of 2)"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintStart_toEndOf="@+id/ivProductImage"
+            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+        <TextView
+            android:id="@+id/tvProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="₹1,500"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/ivProductImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductDetails" />
+
+        <TextView
+            android:id="@+id/tvProductDiscount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:text="79% Off"
+            android:textColor="#239B56"
+            android:textSize="@dimen/sp_12"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/tvProductPrice"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductDetails" />
+
+        <TextView
+            android:id="@+id/tvLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/sanspro"
+            android:text="Only 2 unit(s) in Stock !!"
+            android:textColor="#FF7F50"
+            android:textSize="@dimen/dp_12"
+            app:layout_constraintStart_toEndOf="@+id/ivProductImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductPrice" />
+
+        <TextView
+            android:id="@+id/tvDimensions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="16dp"
+            android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
+            android:fontFamily="@font/sanspro"
+            android:text="One Size  |   Multi-Colour   | QTY :1"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/ivProductImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvLeft" />
+
+        <TextView
+            android:id="@+id/tvEstimation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:text="Estimated Delivery : 14 Feb , 2021"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintStart_toEndOf="@+id/ivProductImage"
+            app:layout_constraintTop_toBottomOf="@+id/tvDimensions" />
+
+        <View
+            android:id="@+id/vShoppingBag"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="@dimen/dp_20"
+            android:background="#C4C4C4"
+            app:layout_constraintTop_toBottomOf="@id/tvEstimation" />
+
+        <TextView
+            android:id="@+id/tvCoupon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:background="@drawable/coupon_code_bg"
+            android:drawableEnd="@drawable/ic_baseline_navigate_next_24"
+            android:gravity="center"
+            android:padding="@dimen/dp_5"
+            android:text="Have a Coupon Code ?"
+            app:layout_constraintTop_toBottomOf="@id/vShoppingBag"
+            tools:layout_editor_absoluteX="20dp" />
+
+        <TextView
+            android:id="@+id/tvPriceSummare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/cera_pro_medium"
+            android:text="PRICE SUMMARY"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintStart_toStartOf="@+id/tvCoupon"
+            app:layout_constraintTop_toBottomOf="@+id/tvCoupon" />
+
+        <TextView
+            android:id="@+id/tvBagTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/cera_pro_medium"
+            android:text="Bag Total"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintStart_toStartOf="@+id/tvCoupon"
+            app:layout_constraintTop_toBottomOf="@+id/tvPriceSummare" />
+
+        <TextView
+            android:id="@+id/tvTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="240dp"
+            android:layout_marginTop="64dp"
+            android:text="₹1,500"
+            app:layout_constraintStart_toEndOf="@+id/tvBagTotal"
+            app:layout_constraintTop_toBottomOf="@+id/tvCoupon" />
+
+        <TextView
+            android:id="@+id/tvBagDiscount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:fontFamily="@font/cera_pro_medium"
+            android:text="Bag Discount"
+            app:layout_constraintStart_toStartOf="@+id/tvCoupon"
+            app:layout_constraintTop_toBottomOf="@+id/tvBagTotal" />
+
+        <TextView
+            android:id="@+id/tvDiscountPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text=" -₹1,403"
+            android:textColor="#148F77"
+            app:layout_constraintEnd_toEndOf="@+id/tvTotalPrice"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tvBagDiscount"
+            app:layout_constraintTop_toBottomOf="@+id/tvTotalPrice" />
+
+        <TextView
+            android:id="@+id/tvSubTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="@dimen/dp_11"
+            android:fontFamily="@font/cera_pro_medium"
+            android:text="Sub Total"
+            app:layout_constraintStart_toStartOf="@+id/tvCoupon"
+            app:layout_constraintTop_toBottomOf="@+id/tvBagDiscount" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:fontFamily="@font/cera_pro_medium"
+            android:text="₹1,396"
+            app:layout_constraintEnd_toEndOf="@+id/tvTotalPrice"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/tvSubTotal"
+            app:layout_constraintTop_toBottomOf="@+id/tvDiscountPrice" />
+
+        <TextView
+            android:id="@+id/tvDiscountShop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:fontFamily="@font/cera_pro_medium"
+            android:text="Discount"
+            app:layout_constraintStart_toStartOf="@+id/tvCoupon"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubTotal" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:fontFamily="@font/cera_pro_medium"
+            android:text="₹0"
+            app:layout_constraintEnd_toEndOf="@+id/tvCoupon"
+            app:layout_constraintHorizontal_bias="0.946"
+            app:layout_constraintStart_toEndOf="@+id/tvDiscountShop"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+        <TextView
+            android:id="@+id/tvShippingCharges"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:fontFamily="@font/cera_pro_medium"
+            android:text="Shipping Charges"
+            app:layout_constraintStart_toStartOf="@+id/tvCoupon"
+            app:layout_constraintTop_toBottomOf="@+id/tvDiscountShop" />
+
+        <TextView
+            android:id="@+id/tvShippingPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:fontFamily="@font/cera_pro_medium"
+            android:text="₹0"
+            app:layout_constraintEnd_toEndOf="@+id/tvCoupon"
+            app:layout_constraintHorizontal_bias="0.954"
+            app:layout_constraintStart_toEndOf="@+id/tvShippingCharges"
+            app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+        <TextView
+            android:id="@+id/tvGrandTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:fontFamily="@font/cera_pro_medium"
+            android:text="Grand Total"
+            app:layout_constraintStart_toStartOf="@+id/tvCoupon"
+            app:layout_constraintTop_toBottomOf="@+id/tvShippingCharges" />
+
+        <TextView
+            android:id="@+id/tvGrandTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:fontFamily="@font/cera_pro_medium"
+            android:text="₹1,396"
+            app:layout_constraintEnd_toEndOf="@+id/tvCoupon"
+            app:layout_constraintHorizontal_bias="0.953"
+            app:layout_constraintStart_toEndOf="@+id/tvGrandTotal"
+            app:layout_constraintTop_toBottomOf="@+id/tvShippingPrice" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:background="@drawable/dotted_bg"
+            android:fontFamily="@font/cera_pro_medium"
+            android:gravity="center"
+            android:text="Congrats ! You Saved ₹1,403 on this order "
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvGrandTotal"
+            tools:layout_editor_absoluteX="20dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="212dp"
+            android:layout_height="31dp"
+            android:layout_marginEnd="80dp"
+            android:background="@color/black"
+            android:text="Continue"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/textView27"
+            app:layout_constraintTop_toBottomOf="@+id/textView27"
+            app:layout_constraintVertical_bias="0.625" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

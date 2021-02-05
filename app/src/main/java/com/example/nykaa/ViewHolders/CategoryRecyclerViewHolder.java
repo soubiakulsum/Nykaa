@@ -1,6 +1,5 @@
 package com.example.nykaa.ViewHolders;
 
-import android.content.Context;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -27,6 +26,7 @@ public class CategoryRecyclerViewHolder extends RecyclerView.ViewHolder {
 
     private View itemVIew;
     private LinearLayoutManager linearLayoutManager;
+
     private void initView(View itemView) {
         itemVIew = itemView;
         categoryRecyclerView = itemView.findViewById(R.id.categoryRecyclerView);
@@ -34,8 +34,17 @@ public class CategoryRecyclerViewHolder extends RecyclerView.ViewHolder {
 
     }
 
-    public void setData(RecyclerViewClickListener recyclerViewClickListener) {
-        BuildData();
+    public void setData(int selectedCategory, RecyclerViewClickListener recyclerViewClickListener) {
+        if (selectedCategory == CategoryConstant.WOMEN) {
+            BuildData();
+        } else if (selectedCategory == CategoryConstant.MEN) {
+            BuildDataMen();
+        } else if (selectedCategory == CategoryConstant.KIDS) {
+            BuildDataKid();
+        } else if (selectedCategory == CategoryConstant.LUXE) {
+            BuildDataLuxe();
+        }
+
         CategoryItemRecyclerViewAdapter categoryItemRecyclerViewAdapter = new CategoryItemRecyclerViewAdapter(recyclerViewClickListener, list);
         categoryRecyclerView.setLayoutManager(linearLayoutManager);
         categoryRecyclerView.setAdapter(categoryItemRecyclerViewAdapter);
@@ -44,9 +53,35 @@ public class CategoryRecyclerViewHolder extends RecyclerView.ViewHolder {
     private List<CategoryDataModel> list = new ArrayList<>();
 
     private void BuildData() {
+        list = new ArrayList<>();
         list.add(new CategoryDataModel(R.drawable.women, CategoryConstant.WOMEN));
         list.add(new CategoryDataModel(R.drawable.men, CategoryConstant.MEN));
         list.add(new CategoryDataModel(R.drawable.kids, CategoryConstant.KIDS));
         list.add(new CategoryDataModel(R.drawable.luxe, CategoryConstant.LUXE));
+    }
+
+    private void BuildDataMen() {
+        list = new ArrayList<>();
+        list.add(new CategoryDataModel(R.drawable.men_high, CategoryConstant.MEN));
+        list.add(new CategoryDataModel(R.drawable.women_nrml, CategoryConstant.WOMEN));
+        list.add(new CategoryDataModel(R.drawable.kids, CategoryConstant.KIDS));
+        list.add(new CategoryDataModel(R.drawable.luxe, CategoryConstant.LUXE));
+    }
+
+    private void BuildDataKid() {
+        list = new ArrayList<>();
+        list.add(new CategoryDataModel(R.drawable.kids_selected, CategoryConstant.KIDS));
+        list.add(new CategoryDataModel(R.drawable.women_nrml, CategoryConstant.WOMEN));
+        list.add(new CategoryDataModel(R.drawable.men, CategoryConstant.MEN));
+        list.add(new CategoryDataModel(R.drawable.luxe, CategoryConstant.LUXE));
+    }
+
+    private void BuildDataLuxe() {
+        list = new ArrayList<>();
+        list.add(new CategoryDataModel(R.drawable.luxe_high, CategoryConstant.LUXE));
+        list.add(new CategoryDataModel(R.drawable.women_nrml, CategoryConstant.WOMEN));
+        list.add(new CategoryDataModel(R.drawable.men, CategoryConstant.MEN));
+        list.add(new CategoryDataModel(R.drawable.kids, CategoryConstant.KIDS));
+
     }
 }

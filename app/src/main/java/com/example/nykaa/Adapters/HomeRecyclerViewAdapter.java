@@ -1,6 +1,5 @@
 package com.example.nykaa.Adapters;
 
-import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.nykaa.Data.constants.CategoryConstant;
 import com.example.nykaa.Data.homeData.LandingpageDataItem;
 import com.example.nykaa.R;
-import com.example.nykaa.ViewHolders.CategoryItemRecyclerViewHolder;
 import com.example.nykaa.ViewHolders.CategoryRecyclerViewHolder;
 import com.example.nykaa.ViewHolders.ColumnGridRecyclerViewHolder;
 import com.example.nykaa.ViewHolders.ColumnGridTopCateViewHolder;
@@ -80,7 +78,7 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (position == 0) {
             if (holder instanceof CategoryRecyclerViewHolder) {
-                ((CategoryRecyclerViewHolder) holder).setData(recyclerViewClickListener);
+                ((CategoryRecyclerViewHolder) holder).setData(selectedCategory,recyclerViewClickListener);
             }
         }
         if (holder instanceof HomeImageTypeViewHolder) {
@@ -146,6 +144,9 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
                     if (list.get(position - 1).getWidgetData().getParameters().getNo_of_cols() != null && list.get(position - 1).getWidgetData().getParameters().getNo_of_cols().equals("2")) {
                         return CategoryConstant.HOUSE_OF_NYKAA;
                     }
+                    if (list.get(position - 1).getWidgetData().getParameters().getNo_of_cols() != null && list.get(position - 1).getWidgetData().getParameters().getNo_of_cols().equals("3")) {
+                        return -1;
+                    }
 
                     return CategoryConstant.COLUMN_GRID_BANNER_IMAGE_VIEW_HOLDER;
                 }
@@ -164,7 +165,16 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     @Override
     public int getItemCount() {
-        return 39;
+        return list.size() + 1;
     }
+
+    private int selectedCategory = CategoryConstant.WOMEN;
+
+    public void UpdataData(int selectedCategory, List<LandingpageDataItem> list) {
+        this.selectedCategory = selectedCategory;
+        this.list = list;
+        notifyDataSetChanged();
+    }
+
     //TAGGED_SLIDING_WIDGET
 }

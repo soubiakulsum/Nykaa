@@ -6,6 +6,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="match_parent">
 
         <TextView
@@ -20,7 +21,7 @@
             app:drawableRightCompat="@drawable/ic_baseline_add_24" />
 
         <View
-            android:id="@+id/vLineTextBrand"
+            android:id="@+id/vLineArrival"
             style="@style/ViewInAccountsFragment"
             android:layout_marginTop="@dimen/dp_10" />
     </LinearLayout>
