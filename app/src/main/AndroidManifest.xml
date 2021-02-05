@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nykaa">
-        <activity android:name=".Activities.SearchActivity"></activity>
+        <activity android:name=".Activities.TestActivity">
+
+        </activity>
+        <activity android:name=".Activities.SearchActivity" />
         <activity android:name=".Activities.ProductActivity" />
         <activity android:name=".Activities.Logout_Activity" />
         <activity android:name=".Activities.Privacy_Activity" />
@@ -28,7 +31,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainDummyActivity"></activity>
+        <activity android:name=".MainDummyActivity" />
         <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.MainActivity" />
         <activity android:name=".Activities.Dashboard_Activity" />

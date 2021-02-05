@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,8 +26,11 @@ import com.example.nykaa.clickListener.RecyclerViewClickListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
 
 public class ListOfItemsFragment extends Fragment implements RecyclerViewClickListener {
@@ -89,8 +93,13 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
     }
 
     private void buildData() {
-        Thread thread = new Thread(runnable);
-        thread.start();
+        if (fileName.equals("bags.json") || fileName.equals("dress.json") || fileName.equals("shoes.json") || fileName.equals("watches.json")) {
+            Thread thread = new Thread(runnable);
+            thread.start();
+        } else {
+            Thread thread = new Thread(downloadRunnable);
+            thread.start();
+        }
     }
 
     private Runnable runnable = new Runnable() {
@@ -100,6 +109,52 @@ public class ListOfItemsFragment extends Fragment implements RecyclerViewClickLi
         }
     };
     private String fileName;
+    private Runnable downloadRunnable = new Runnable() {
+        @Override
+        public void run() {
+            try {
+                URL url = new URL("https://www.nykaafashion.com/catalogsearch/result/?q="+fileName+"&searchType=Manual&internalSearchTerm="+fileName);
+                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                InputStream inputStream = urlConnection.getInputStream();
+
+                int data = inputStream.read();
+                StringBuilder stringBuilder = new StringBuilder();
+                while (data != -1) {
+                    char ch = (char) data;
+                    stringBuilder.append(ch);
+                    data = inputStream.read();
+                }
+                String results = stringBuilder.toString();
+
+                String jsonResult = "";
+
+                for (int index = results.indexOf("<script id=\"__PRELOADED_STATE__\" type=\"application/json\""); index >= 0; ) {
+
+                    // Start Index
+                    int startIndex = results.indexOf(">", index + 1);
+                    ++startIndex;
+
+                    // End Index
+                    int indexOfEnd = results.indexOf("</script>", startIndex + 1);
+
+                    String attributesString = results.substring(startIndex, indexOfEnd);
+                    // Replace below line with desired logic with calling trim() on the String attributesString
+                    jsonResult = attributesString;
+
+                    // Next Address will be after the end of first address
+                    index = results.indexOf("<address", indexOfEnd + 1);
+                }
+
+                String finalJsonResult = jsonResult;
+                buildDataFromJson(finalJsonResult);
+                inputStream.close();
+
+            } catch (IOException e) {
+                Toast.makeText(getActivity(), "Not working", Toast.LENGTH_SHORT).show();
+                e.printStackTrace();
+            }
+        }
+    };
 
     private void loadJsonFromAsset() {
         try {

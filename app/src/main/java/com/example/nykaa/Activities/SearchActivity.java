@@ -65,5 +65,14 @@ public class SearchActivity extends AppCompatActivity {
             startActivity(intent);
 
         }
+        if (str.equals("bags")) {
+            Intent intent = new Intent(SearchActivity.this, MainScreenActivity.class);
+            intent.putExtra(IntentConstants.SEARCH_STUFF, "bags.json");
+            startActivity(intent);
+        } else {
+            Intent intent = new Intent(SearchActivity.this, MainScreenActivity.class);
+            intent.putExtra(IntentConstants.SEARCH_STUFF, str);
+            startActivity(intent);
+        }
     }
 }
