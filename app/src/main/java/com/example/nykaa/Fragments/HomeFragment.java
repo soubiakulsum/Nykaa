@@ -118,7 +118,7 @@ public class HomeFragment extends Fragment implements RecyclerViewClickListener 
                 homeRecyclerViewAdapter = new HomeRecyclerViewAdapter(HomeFragment.this, homeData);
                 recyclerview.setAdapter(homeRecyclerViewAdapter);
             }
-        }, 3000);
+        }, 1000);
 
 
     }

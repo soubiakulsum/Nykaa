@@ -17,10 +17,7 @@ import com.example.nykaa.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-
-
     private VideoView mVideoView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

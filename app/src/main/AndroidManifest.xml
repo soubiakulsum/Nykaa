@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nykaa">
+
         <activity android:name=".Activities.CardItemActivity">
 
             <intent-filter>
@@ -20,6 +21,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".Activities.ProductActivity"></activity>
+
+        <activity android:name=".Activities.TestActivity">
+
+        </activity>
+        <activity android:name=".Activities.SearchActivity" />
+        <activity android:name=".Activities.ProductActivity" />
+
         <activity android:name=".Activities.Logout_Activity" />
         <activity android:name=".Activities.Privacy_Activity" />
         <activity android:name=".Activities.Terms_Activity" />
@@ -27,6 +35,7 @@
         <activity android:name=".Activities.Responsible_Activity" />
         <activity android:name=".Activities.DisclosureActivity" />
         <activity android:name=".Activities.HelpCenterActivity" />
+
         <activity android:name=".Activities.DummyActivity"></activity>
         <activity android:name=".Activities.MainScreenActivity" />
         <activity android:name=".Activities.MainDummyActivity">
@@ -34,6 +43,15 @@
         </activity>
         <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.MainActivity"></activity>
+
+        <activity android:name=".Activities.DummyActivity" />
+        <activity android:name=".Activities.MainScreenActivity">
+           
+        </activity>
+        <activity android:name=".MainDummyActivity" />
+        <activity android:name=".Activities.LoginActivity" />
+        <activity android:name=".Activities.MainActivity" />
+
         <activity android:name=".Activities.Dashboard_Activity" />
         <activity android:name=".Activities.Verification_OTP" />
         <activity android:name=".Activities.Phone_Authentication" />
