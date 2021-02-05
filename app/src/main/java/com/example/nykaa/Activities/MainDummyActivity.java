@@ -6,7 +6,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
+import com.example.nykaa.Fragments.CategoriesFragment;
 import com.example.nykaa.Fragments.CategoryNameFragment;
+import com.example.nykaa.Fragments.CategoryTypeFragment;
 import com.example.nykaa.Fragments.HomeFragment;
 import com.example.nykaa.Fragments.ListOfItemsFragment;
 import com.example.nykaa.Fragments.SalesFragment;
@@ -22,7 +24,7 @@ public class MainDummyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_dummy);
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        CategoryNameFragment homeFragment = CategoryNameFragment.newInstance("shoes.json");
+        CategoriesFragment homeFragment = CategoriesFragment.newInstance();
         fragmentTransaction.replace(R.id.container, homeFragment, "aa").commit();
     }
 }

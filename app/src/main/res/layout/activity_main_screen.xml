@@ -13,7 +13,7 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/actionBar" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/actionBar"
@@ -26,7 +26,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="65dp">
+            android:layout_height="45dp">
 
 
             <ImageView
@@ -43,12 +43,13 @@
                 android:id="@+id/Nykaa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp_30"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="@dimen/dp_40"
                 android:layout_toRightOf="@id/imageView3"
                 app:drawableStartCompat="@drawable/ic_nykaafont"
+                app:layout_constraintBottom_toTopOf="@+id/tvFashion"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
 
             <TextView
                 android:id="@+id/tvFashion"
@@ -57,9 +58,11 @@
                 android:layout_below="@id/Nykaa"
                 android:layout_marginStart="48dp"
                 android:layout_toEndOf="@id/imageView3"
-                android:text="F A S H I O N"
                 android:fontFamily="@font/cera_pro_medium"
+                android:text="F A S H I O N"
+                android:textSize="@dimen/dp_9"
                 android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
                 app:layout_constraintTop_toBottomOf="@+id/Nykaa" />
 
@@ -84,7 +87,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/cart"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

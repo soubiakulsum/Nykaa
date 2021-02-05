@@ -136,6 +136,7 @@ public class MainScreenActivity extends AppCompatActivity {
     }
 
     private void LaunchSaleFragment() {
+
         getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, new SalesFragment()).commit();
     }
 
