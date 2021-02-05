@@ -30,6 +30,11 @@ public class CategoryTypeFragment extends Fragment implements TypeClickListener 
         // Required empty public constructor
     }
 
+    public CategoryTypeFragment newInstance(){
+        CategoryTypeFragment categoryTypeFragment = new CategoryTypeFragment();
+        return categoryTypeFragment;
+    }
+
     public static CategoryTypeFragment newInstance(String s) {
         CategoryTypeFragment categoryTypeFragment = new CategoryTypeFragment();
         return categoryTypeFragment;

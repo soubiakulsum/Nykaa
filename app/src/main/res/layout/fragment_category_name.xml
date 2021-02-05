@@ -5,9 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.CategoryNameFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/NameRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/NameRecyclerView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:src="@drawable/catnames"
+        android:scaleType="centerCrop"
+        android:layout_height="wrap_content"/>
 
 </FrameLayout>

@@ -18,6 +18,7 @@ import androidx.cardview.widget.CardView;
 import com.example.nykaa.Data.constants.IntentConstants;
 import com.example.nykaa.Fragments.AccountFragment;
 import com.example.nykaa.Fragments.BrandsFragment;
+import com.example.nykaa.Fragments.CategoriesFragment;
 import com.example.nykaa.Fragments.HomeFragment;
 import com.example.nykaa.Fragments.ListOfItemsFragment;
 import com.example.nykaa.Fragments.SalesFragment;
@@ -26,15 +27,40 @@ import com.example.nykaa.R;
 
 public class MainScreenActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
+    private ImageView imageView3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
-        launchAccountFragment();
+        imageView3 = findViewById(R.id.imageView3);
+        imageView3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navi1.setImageResource(R.drawable.ic_nykaa_logo);
+                navi2.setImageResource(R.drawable.ic_sale);
+                navi3.setImageResource(R.drawable.ic_shop_selected);
+                navi4.setImageResource(R.drawable.ic_account);
+                naviText1.setTextColor(Color.parseColor("#A9A9A9"));
+                naviText2.setTextColor(Color.parseColor("#A9A9A9"));
+                naviText3.setTextColor(Color.parseColor("#FB7880"));
+                naviText4.setTextColor(Color.parseColor("#A9A9A9"));
+                LaunchBrandFragment();
 
+            }
+
+        });
+        launchAccountFragment();
         launchBrandFragment();
     }
+
+//    private void launchCategoriesFragment() {
+//        fragmentManager = getSupportFragmentManager();
+//        CategoriesFragment categoriesFragment = CategoriesFragment.newInstance();
+//        FragmentTransaction fragmentTransaction =fragmentManager.beginTransaction();
+//        fragmentTransaction.replace(R.id.shopContainer, categoriesFragment, "Categories").commit();
+//    }
 
     private void launchBrandFragment() {
         fragmentManager = getSupportFragmentManager();
@@ -44,6 +70,8 @@ public class MainScreenActivity extends AppCompatActivity {
 
         // launchAccountFragment();
         initView();
+
+
 
         if (getIntent() != null && getIntent().getExtras() != null) {
             LaunchListItemFragment(getIntent().getStringExtra(IntentConstants.SEARCH_STUFF));
@@ -125,7 +153,7 @@ public class MainScreenActivity extends AppCompatActivity {
                 naviText2.setTextColor(Color.parseColor("#A9A9A9"));
                 naviText3.setTextColor(Color.parseColor("#FB7880"));
                 naviText4.setTextColor(Color.parseColor("#A9A9A9"));
-                LaunchShopFragment();
+                LaunchBrandFragment();
             }
         });
 
@@ -162,8 +190,8 @@ public class MainScreenActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, new SalesFragment()).commit();
     }
 
-    private void LaunchShopFragment() {
-        getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, new ShopFragment()).commit();
+    private void LaunchBrandFragment() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, new BrandsFragment()).commit();
     }
 
     public void LaunchListItemFragment(String fileName) {
