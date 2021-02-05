@@ -24,4 +24,8 @@
     <dimen name="dp_230" />-->
 
     <dimen name="dp_230" />
+    <dimen name="dp_115">115dp</dimen>
+    <dimen name="dp_285">285dp</dimen>
+    <dimen name="dp_340">340dp</dimen>
+    <dimen name="dp_110">110dp</dimen>
 </resources>

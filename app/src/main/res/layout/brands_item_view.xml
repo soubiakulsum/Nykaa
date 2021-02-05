@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:backgroundTint="@android:color/transparent"
+    android:layout_height="wrap_content">
+
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/BrandList"
+        android:background="@color/light_grey"
+        android:textColor="@color/black"
+        android:layout_height="@dimen/dp_50"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2.4dp"
+        android:layout_marginTop="@dimen/dp_50"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/line_bg" />
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>

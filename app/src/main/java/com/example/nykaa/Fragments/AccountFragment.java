@@ -1,7 +1,6 @@
 package com.example.nykaa.Fragments;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,13 +12,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.nykaa.Activities.ChatWithUs;
 import com.example.nykaa.Activities.HelpCenterActivity;
-import com.example.nykaa.Activities.Logout_Activity;
+import com.example.nykaa.Activities.LoginActivity;
+import com.example.nykaa.Activities.MyOrderActivity;
+import com.example.nykaa.Activities.MyOrderGify;
+import com.example.nykaa.Activities.MyWishListActivity;
 import com.example.nykaa.Activities.Privacy_Activity;
+import com.example.nykaa.Activities.RateActivity;
 import com.example.nykaa.Activities.Responsible_Activity;
 import com.example.nykaa.Activities.Shipping_Activity;
 import com.example.nykaa.Activities.Terms_Activity;
 import com.example.nykaa.R;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class AccountFragment extends Fragment implements View.OnClickListener {
 
@@ -30,6 +37,12 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
     Button mBtnPrivacy;
     Button mBtnRate;
     Button mBtnLogout;
+
+    Button mtvMyOrder;
+
+    Button mtvWishlist;
+
+    Button mtvChat;
 
 
     private static final String ARG_PARAM1 = "param1";
@@ -51,6 +64,9 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
+        mtvMyOrder=view.findViewById(R.id.tvMyOrders);
+        mtvWishlist=view.findViewById(R.id.tvMyWishlist);
         mBtnHelpCenter=view.findViewById(R.id.btnHelpCenter);
         mBtnResponsible=view.findViewById(R.id.btnResponsible);
         mBtnShippingPolicy=view.findViewById(R.id.btnShippingPolicy);
@@ -58,6 +74,7 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         mBtnPrivacy=view.findViewById(R.id.btnPrivacy);
         mBtnRate=view.findViewById(R.id.btnRate);
         mBtnLogout=view.findViewById(R.id.btnLogout);
+        mtvChat=view.findViewById(R.id.tvChatWithUs);
 
         mBtnHelpCenter.setOnClickListener(this);
         mBtnResponsible.setOnClickListener(this);
@@ -66,6 +83,9 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
         mBtnPrivacy.setOnClickListener(this);
         mBtnRate.setOnClickListener(this);
         mBtnLogout.setOnClickListener(this);
+        mtvMyOrder.setOnClickListener(this);
+        mtvWishlist.setOnClickListener(this);
+        mtvChat.setOnClickListener(this);
 
 
     }
@@ -104,15 +124,39 @@ public class AccountFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.btnRate:
+                Intent intent5= new Intent(getContext(), RateActivity.class);
+                startActivity(intent5);
+                break;
 
-                Intent i = new Intent(android.content.Intent.ACTION_VIEW);
-                i.setData(Uri.parse("https://play.google.com/store?utm_source=apac_med&utm_medium=hasem&utm_content=Jan0421&utm_campaign=Evergreen&pcampaignid=MKT-EDR-apac-in-1003227-med-hasem-py-Evergreen-Jan0421-Text_Search_BKWS-BKWS%7cONSEM_kwid_43700058914955321_creativeid_480977427755_device_c&gclid=CjwKCAiAsOmABhAwEiwAEBR0Zkkr7UNJG4iuTfe8UN_RmwPCG6NRR4w-EPMKNRNgD7MSM0PGrqI37RoCgFAQAvD_BwE&gclsrc=aw.ds "));
-                startActivity(i);
 
             case R.id.btnLogout:
 
-                Intent intent6 = new Intent(getContext(), Logout_Activity.class);
+                Intent intent6 = new Intent(getContext(), LoginActivity.class);
                 startActivity(intent6);
+
+
+                break;
+
+            case R.id.tvMyOrders:
+
+
+                Intent intent7 = new Intent(getContext(), MyOrderGify.class);
+                startActivity(intent7);
+                break;
+
+
+
+
+            case R.id.tvMyWishlist:
+
+                Intent intent8 = new Intent(getContext(), MyWishListActivity.class);
+                startActivity(intent8);
+                break;
+
+            case R.id.tvChatWithUs:
+
+                Intent intent9= new Intent(getContext(), ChatWithUs.class);
+                startActivity(intent9);
                 break;
 
 
