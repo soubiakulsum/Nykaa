@@ -6,6 +6,9 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.nykaa.Data.ProductDetail.ProductMediaItem;
+import com.example.nykaa.HelperClass.ImageLoader;
+
 public class ProductViewHolder extends RecyclerView.ViewHolder {
 
     private ImageView ivProductImage;
@@ -15,11 +18,18 @@ public class ProductViewHolder extends RecyclerView.ViewHolder {
         initViews(itemView);
     }
 
+    private View view;
+
     private void initViews(View itemView) {
+        view = itemView;
         ivProductImage = itemView.findViewById(R.id.ivProductImage);
     }
 
-    public void setData(ProductModelClass productModelClass) {
-        ivProductImage.setImageResource(productModelClass.getIvProductImage());
+    public void setData(ProductMediaItem productMediaItem) {
+
+        if (productMediaItem.getUrl() != null && !productMediaItem.getUrl().equals("")) {
+            ImageLoader.loadImage(view, ivProductImage, productMediaItem.getUrl());
+        }
+
     }
 }

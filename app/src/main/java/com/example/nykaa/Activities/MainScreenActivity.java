@@ -158,4 +158,10 @@ public class MainScreenActivity extends AppCompatActivity {
         super.onBackPressed();
         constraintLayout.setVisibility(View.VISIBLE);
     }
+
+    public void LaunchProductDetailActivity(String url){
+       Intent intent = new Intent(MainScreenActivity.this,ProductActivity.class);
+       intent.putExtra(IntentConstants.PRODUCT_DETAIL,url);
+       startActivity(intent);
+    }
 }

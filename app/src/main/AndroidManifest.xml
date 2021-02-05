@@ -14,13 +14,11 @@
 
         <activity android:name=".Activities.CardItemActivity">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".Activities.ProductActivity"></activity>
+        <activity android:name=".Activities.ProductActivity">
+
+        </activity>
 
         <activity android:name=".Activities.TestActivity">
 
@@ -37,7 +35,13 @@
         <activity android:name=".Activities.HelpCenterActivity" />
 
         <activity android:name=".Activities.DummyActivity"></activity>
-        <activity android:name=".Activities.MainScreenActivity" />
+        <activity android:name=".Activities.MainScreenActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Activities.MainDummyActivity">
 
         </activity>
