@@ -26,7 +26,7 @@
 
         </activity>
         <activity android:name=".Activities.SearchActivity" />
-        <activity android:name=".Activities.ProductActivity" />
+
 
         <activity android:name=".Activities.Logout_Activity" />
         <activity android:name=".Activities.Privacy_Activity" />
@@ -43,14 +43,6 @@
         </activity>
         <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.MainActivity"></activity>
-
-        <activity android:name=".Activities.DummyActivity" />
-        <activity android:name=".Activities.MainScreenActivity">
-           
-        </activity>
-        <activity android:name=".MainDummyActivity" />
-        <activity android:name=".Activities.LoginActivity" />
-        <activity android:name=".Activities.MainActivity" />
 
         <activity android:name=".Activities.Dashboard_Activity" />
         <activity android:name=".Activities.Verification_OTP" />
