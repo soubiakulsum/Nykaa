@@ -30,8 +30,9 @@ public class MainScreenActivity extends AppCompatActivity {
 
         if (getIntent() != null && getIntent().getExtras() != null) {
             LaunchListItemFragment(getIntent().getStringExtra(IntentConstants.SEARCH_STUFF));
-            Log.d("thing",getIntent().getStringExtra(IntentConstants.SEARCH_STUFF) );
-        }else {
+            Log.d("thing", getIntent().getStringExtra(IntentConstants.SEARCH_STUFF));
+        } else {
+
             HomeScreenFragment();
         }
 
@@ -47,6 +48,7 @@ public class MainScreenActivity extends AppCompatActivity {
     private TextView naviText3;
     private TextView naviText4;
     private CardView constraintLayout;
+    private CardView actionBar;
 
     private void initView() {
         navi1 = findViewById(R.id.navi1);
@@ -58,6 +60,7 @@ public class MainScreenActivity extends AppCompatActivity {
         naviText3 = findViewById(R.id.naviText3);
         naviText4 = findViewById(R.id.naviText4);
         constraintLayout = findViewById(R.id.constraintLayout);
+        actionBar = findViewById(R.id.actionBar);
 
         setListeners();
     }
@@ -132,6 +135,8 @@ public class MainScreenActivity extends AppCompatActivity {
     }
 
     private void HomeScreenFragment() {
+        constraintLayout.setVisibility(View.VISIBLE);
+        actionBar.setVisibility(View.VISIBLE);
         getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, new HomeFragment()).commit();
     }
 
@@ -145,11 +150,12 @@ public class MainScreenActivity extends AppCompatActivity {
 
     public void LaunchListItemFragment(String fileName) {
         constraintLayout.setVisibility(View.GONE);
+        actionBar.setVisibility(View.GONE);
         getSupportFragmentManager().beginTransaction().replace(R.id.flContainer, ListOfItemsFragment.newInstance(fileName)).addToBackStack("listItem").commit();
     }
 
-    public void LaunchSearchActivity(){
-        Intent intent = new Intent(MainScreenActivity.this,SearchActivity.class);
+    public void LaunchSearchActivity() {
+        Intent intent = new Intent(MainScreenActivity.this, SearchActivity.class);
         startActivity(intent);
     }
 
@@ -157,11 +163,14 @@ public class MainScreenActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         constraintLayout.setVisibility(View.VISIBLE);
+        actionBar.setVisibility(View.VISIBLE);
     }
 
-    public void LaunchProductDetailActivity(String url){
-       Intent intent = new Intent(MainScreenActivity.this,ProductActivity.class);
-       intent.putExtra(IntentConstants.PRODUCT_DETAIL,url);
-       startActivity(intent);
+    public void LaunchProductDetailActivity(String url) {
+        Intent intent = new Intent(MainScreenActivity.this, ProductActivity.class);
+        intent.putExtra(IntentConstants.PRODUCT_DETAIL, url);
+        startActivity(intent);
     }
+
+
 }
