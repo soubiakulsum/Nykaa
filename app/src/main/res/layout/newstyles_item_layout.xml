@@ -19,19 +19,19 @@
             android:textSize="@dimen/sp_22" />
 
         <ImageView
-            android:id="@+id/ivBrandName"
+            android:id="@+id/ivNewStyleBrandName"
             android:layout_width="160dp"
             android:layout_height="@dimen/dp_100"
             android:layout_below="@id/tvStylesFrom"
             android:layout_marginTop="@dimen/dp_10" />
 
         <ImageView
-            android:id="@+id/ivBrandName2"
+            android:id="@+id/ivNewStyleBrandName2"
             android:layout_width="160dp"
             android:layout_height="@dimen/dp_100"
             android:layout_marginStart="@dimen/dp_50"
             android:layout_marginTop="@dimen/dp_40"
-            android:layout_toEndOf="@id/ivBrandName" />
+            android:layout_toEndOf="@id/ivNewStyleBrandName" />
 
     </RelativeLayout>
 

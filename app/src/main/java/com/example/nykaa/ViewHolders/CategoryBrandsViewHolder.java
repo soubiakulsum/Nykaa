@@ -12,12 +12,10 @@ import com.example.nykaa.R;
 
 public class CategoryBrandsViewHolder extends RecyclerView.ViewHolder {
 
-    private TextView tvTopJustIn;
-    private ImageView ivBrandsName;
-    private TextView tvJustInBrands;
-    private ImageView ivBrandsName2;
-    private TextView tvJustInBrands2;
-
+    private ImageView ivBrandsModels;
+    private TextView tvJustInBrandsName;
+    private ImageView ivBrandsModels2;
+    private TextView tvJustInBrandsName2;
 
 
     public CategoryBrandsViewHolder(@NonNull View itemView) {
@@ -26,17 +24,20 @@ public class CategoryBrandsViewHolder extends RecyclerView.ViewHolder {
     }
 
     private void initViews(View itemView) {
-
-        tvTopJustIn = itemView.findViewById(R.id.tvTopJustIn);
-        ivBrandsName = itemView.findViewById(R.id.ivBrandsName);
-        tvJustInBrands = itemView.findViewById(R.id.tvJustInBrands);
-        ivBrandsName2 = itemView.findViewById(R.id.ivBrandsName2);
-        tvJustInBrands2 = itemView.findViewById(R.id.tvJustInBrands2);
+        ivBrandsModels = itemView.findViewById(R.id.ivBrandsModels);
+        tvJustInBrandsName = itemView.findViewById(R.id.tvJustInBrandsName);
+        ivBrandsModels2 = itemView.findViewById(R.id.ivBrandsModels2);
+        tvJustInBrandsName2 = itemView.findViewById(R.id.tvJustInBrandsName2);
 
     }
 
     public void setBrandsData(NameModelClass nameModelClass){
-        ivBrandsName.setImageResource(nameModelClass.getIvNewTrends());
+
+        ivBrandsModels.setImageResource(nameModelClass.getIvBrandsName());
+        tvJustInBrandsName.setText(nameModelClass.getTvJustInBrandsName());
+        ivBrandsModels2.setImageResource(nameModelClass.getIvBrandName2());
+        tvJustInBrandsName2.setText(nameModelClass.getTvJustInBrandsName2());
+
 
 
     }

@@ -26,6 +26,7 @@ public class CategoryNewTrendsViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void setTrendsData(NameModelClass nameModelClass){
-
+        ivNewTrends.setImageResource(nameModelClass.getIvNewTrends());
+        ivNewTrends2.setImageResource(nameModelClass.getIvNewTrends2());
     }
 }

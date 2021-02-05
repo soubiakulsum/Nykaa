@@ -36,7 +36,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onPrepared(MediaPlayer mediaPlayer) {
                 mediaPlayer.setLooping(true);
-            }
+    }
+
         });
     }
 

@@ -12,9 +12,9 @@ import com.example.nykaa.R;
 
 public class CategoryNewStylesViewHolder extends RecyclerView.ViewHolder {
 
-    private TextView tvStylesFrom;
-    private ImageView ivBrandName;
-    private ImageView ivBrandName2;
+    private TextView TvStylesFrom;
+    private ImageView ivNewStyleBrandName;
+    private ImageView ivNewStyleBrandName2;
 
     public CategoryNewStylesViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -22,12 +22,14 @@ public class CategoryNewStylesViewHolder extends RecyclerView.ViewHolder {
     }
 
     private void initViews(View itemView) {
-        tvStylesFrom = itemView.findViewById(R.id.tvStylesFrom);
-        ivBrandName = itemView.findViewById(R.id.ivBrandName);
-        ivBrandName2 = itemView.findViewById(R.id.ivBrandName2);
+        ivNewStyleBrandName = itemView.findViewById(R.id.ivNewStyleBrandName);
+        ivNewStyleBrandName2 = itemView.findViewById(R.id.ivNewStyleBrandName2);
+
+
     }
 
     public void setNewStylesData(NameModelClass nameModelClass){
-
+        ivNewStyleBrandName.setImageResource(nameModelClass.getIvNewStyleBrandName());
+        ivNewStyleBrandName2.setImageResource(nameModelClass.getIvBrandName2());
     }
 }

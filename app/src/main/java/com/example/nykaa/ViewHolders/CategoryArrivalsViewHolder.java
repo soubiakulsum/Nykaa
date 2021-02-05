@@ -12,7 +12,7 @@ import com.example.nykaa.R;
 public class CategoryArrivalsViewHolder extends RecyclerView.ViewHolder {
 
     private TextView tvNewBrands;
-    private View vLineTextBrand;
+    private View vLineArrival;
 
     public CategoryArrivalsViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -20,12 +20,17 @@ public class CategoryArrivalsViewHolder extends RecyclerView.ViewHolder {
     }
 
     private void initViews(View itemView) {
+
         tvNewBrands = itemView.findViewById(R.id.tvNewBrands);
-        vLineTextBrand = itemView.findViewById(R.id.vLineTextBrand);
+        vLineArrival = itemView.findViewById(R.id.vLineArrival);
     }
 
     public void setArrivalsData(NameModelClass nameModelClass){
-        tvNewBrands.setText(nameModelClass.getArrivals());
+        tvNewBrands.setText(nameModelClass.getTvTopJustIn());
+        vLineArrival.setVisibility(View.VISIBLE);
+
+
+
 
 
 

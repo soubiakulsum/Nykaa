@@ -20,37 +20,38 @@
             android:textSize="@dimen/sp_23" />
 
         <ImageView
-            android:id="@+id/ivBrandsName"
+            android:id="@+id/ivBrandsModels"
             android:layout_width="@dimen/dp_150"
             android:layout_height="@dimen/dp_200"
             android:layout_below="@id/tvTopJustIn"
             android:layout_marginTop="@dimen/dp_20" />
 
         <TextView
-            android:id="@+id/tvJustInBrands"
+            android:id="@+id/tvJustInBrandsName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ivBrandsName"
+            android:layout_below="@id/ivBrandsModels"
             android:layout_marginTop="@dimen/dp_6"
+            android:layout_alignParentStart="true"
             android:fontFamily="@font/sanspro"
             android:textColor="@color/black"
             android:textSize="@dimen/sp_25" />
 
         <ImageView
-            android:id="@+id/ivBrandsName2"
+            android:id="@+id/ivBrandsModels2"
             android:layout_width="@dimen/dp_150"
             android:layout_height="@dimen/dp_200"
             android:layout_marginStart="@dimen/dp_50"
             android:layout_marginTop="@dimen/dp_50"
-            android:layout_toRightOf="@id/ivBrandsName" />
+            android:layout_toRightOf="@id/ivBrandsModels" />
 
         <TextView
-            android:id="@+id/tvJustInBrands2"
+            android:id="@+id/tvJustInBrandsName2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ivBrandsName2"
-            android:layout_alignStart="@+id/ivBrandsName2"
-            android:layout_alignEnd="@+id/ivBrandsName2"
+            android:layout_below="@id/ivBrandsModels2"
+            android:layout_alignStart="@+id/ivBrandsModels2"
+            android:layout_alignEnd="@+id/ivBrandsModels2"
             android:layout_marginTop="6dp"
             android:fontFamily="@font/sanspro"
             android:textColor="@color/black"
