@@ -1,5 +1,9 @@
 package com.example.nykaa.Activities;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,6 +17,7 @@ import androidx.cardview.widget.CardView;
 
 import com.example.nykaa.Data.constants.IntentConstants;
 import com.example.nykaa.Fragments.AccountFragment;
+import com.example.nykaa.Fragments.BrandsFragment;
 import com.example.nykaa.Fragments.HomeFragment;
 import com.example.nykaa.Fragments.ListOfItemsFragment;
 import com.example.nykaa.Fragments.SalesFragment;
@@ -20,11 +25,23 @@ import com.example.nykaa.Fragments.ShopFragment;
 import com.example.nykaa.R;
 
 public class MainScreenActivity extends AppCompatActivity {
+    private FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
+        launchAccountFragment();
+
+        launchBrandFragment();
+    }
+
+    private void launchBrandFragment() {
+        fragmentManager = getSupportFragmentManager();
+        BrandsFragment brandsFragment = BrandsFragment.newInstance();
+        FragmentTransaction fragmentTransaction =fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.flContainer, brandsFragment, "brands").commit();
+
         // launchAccountFragment();
         initView();
 
@@ -167,10 +184,14 @@ public class MainScreenActivity extends AppCompatActivity {
         actionBar.setVisibility(View.VISIBLE);
     }
 
+
+
+
     public void LaunchProductDetailActivity(String url) {
         Intent intent = new Intent(MainScreenActivity.this, ProductActivity.class);
         intent.putExtra(IntentConstants.PRODUCT_DETAIL, url);
         startActivity(intent);
+
     }
 
 

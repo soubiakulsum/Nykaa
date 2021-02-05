@@ -4,6 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.Logout_Activity">
+    tools:context=".Activities.ChatWithUs">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:src="@drawable/mychats"
+        android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nykaa">
+        <activity android:name=".Activities.MyOrderGify"></activity>
+        <activity android:name=".Activities.RateActivity" />
+        <activity android:name=".Activities.ChatWithUs" />
+        <activity android:name=".Activities.MyWishListActivity" />
+        <activity android:name=".Activities.MyOrderActivity" />
+
         <activity android:name=".Activities.CardItemActivity">
         </activity>
         <activity android:name=".Activities.ProductActivity">
@@ -17,14 +23,21 @@
         </activity>
         <activity android:name=".Activities.SearchActivity" />
         <activity android:name=".Activities.Logout_Activity" />
+
+
         <activity android:name=".Activities.Privacy_Activity" />
         <activity android:name=".Activities.Terms_Activity" />
         <activity android:name=".Activities.Shipping_Activity" />
         <activity android:name=".Activities.Responsible_Activity" />
         <activity android:name=".Activities.DisclosureActivity" />
         <activity android:name=".Activities.HelpCenterActivity" />
+        <activity android:name=".Activities.DummyActivity"/>
+
+
+
         <activity android:name=".Activities.DummyActivity"></activity>
         <activity android:name=".Activities.MainScreenActivity" >
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

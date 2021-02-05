@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.nykaa.R;
 
-public class Logout_Activity extends AppCompatActivity {
+public class ChatWithUs extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_logout_);
+        setContentView(R.layout.activity_chat_with_us);
     }
 }
