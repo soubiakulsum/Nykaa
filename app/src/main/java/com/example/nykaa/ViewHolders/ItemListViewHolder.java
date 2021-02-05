@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nykaa.Data.listItemsData.JsonMember1Item;
@@ -28,6 +29,7 @@ public class ItemListViewHolder extends RecyclerView.ViewHolder {
     private TextView tvTag;
     private TextView tvRupee;
     private View view;
+    private ConstraintLayout constraintlayout;
 
     private void initView(View itemView) {
         view = itemView;
@@ -39,6 +41,7 @@ public class ItemListViewHolder extends RecyclerView.ViewHolder {
         tvDiscount = itemView.findViewById(R.id.tvDiscount);
         tvTag = itemView.findViewById(R.id.tvTag);
         tvRupee = itemView.findViewById(R.id.textView3);
+        constraintlayout = itemView.findViewById(R.id.constraintlayout);
     }
 
     public void setData(JsonMember1Item data, RecyclerViewClickListener recyclerViewClickListener) {
@@ -56,5 +59,12 @@ public class ItemListViewHolder extends RecyclerView.ViewHolder {
         } else {
             tvTag.setVisibility(View.GONE);
         }
+
+        constraintlayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recyclerViewClickListener.OnProductItemClicked(data.getActionUrl());
+            }
+        });
     }
 }

@@ -151,6 +151,11 @@ public class HomeFragment extends Fragment implements RecyclerViewClickListener 
         mainScreenActivity.LaunchListItemFragment(fileName);
     }
 
+    @Override
+    public void OnProductItemClicked(String fileName) {
+
+    }
+
     private void loadJsonFromAsset2(String fileName) {
         try {
             InputStream inputStream = getActivity().getAssets().open(fileName);

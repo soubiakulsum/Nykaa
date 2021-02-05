@@ -78,6 +78,11 @@ public class SalesFragment extends Fragment implements RecyclerViewClickListener
 
     }
 
+    @Override
+    public void OnProductItemClicked(String fileName) {
+
+    }
+
 
     public void buildData() {
         Thread thread = new Thread(runnable);
