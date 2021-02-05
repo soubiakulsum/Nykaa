@@ -1,7 +1,10 @@
 package com.example.nykaa.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -90,6 +93,7 @@ public class ProductActivity extends AppCompatActivity {
     private TextView discount;
     private TextView tvInclusiveOfTaxes;
     private TextView tvDetails;
+    private ImageView search;
     private void initViews() {
         ProductRecyclerVIew = findViewById(R.id.ProductRecyclerVIew);
         recyclerViewIndicator = findViewById(R.id.recyclerViewIndicator);
@@ -99,6 +103,14 @@ public class ProductActivity extends AppCompatActivity {
         tvPrice = findViewById(R.id.tvPrice);
         tvInclusiveOfTaxes = findViewById(R.id.tvInclusiveOfTaxes);
         tvDetails = findViewById(R.id.tvDetails);
+        search = findViewById(R.id.search);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProductActivity.this,SearchActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setViewPagerAdapter() {
