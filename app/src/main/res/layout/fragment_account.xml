@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="20dp"
+    android:id="@+id/AccountContainer"
     android:orientation="vertical"
     tools:context=".Fragments.AccountFragment">
 
@@ -40,10 +41,11 @@
             android:layout_marginTop="10dp"
             android:background="#c0c0c0" />
 
-        <TextView
+        <Button
             android:id="@+id/tvMyOrders"
             style="@style/FirstTextViewInAccounts"
             android:layout_below="@id/vLineOne"
+            android:background="@drawable/flag_transparent"
             android:text="@string/my_orders"
             app:drawableLeftCompat="@drawable/ic_block_1" />
 
@@ -58,10 +60,11 @@
             style="@style/ViewInAccountsFragment"
             android:layout_below="@id/tvMyOrders" />
 
-        <TextView
+        <Button
             android:id="@+id/tvMyWishlist"
             style="@style/FirstTextViewInAccounts"
             android:layout_below="@id/vLineTwo"
+            android:background="@drawable/flag_transparent"
             android:drawableLeft="@drawable/ic_heart"
             android:text="@string/my_wishlist" />
 
@@ -94,11 +97,12 @@
             android:background="@android:color/transparent"
             android:src="@drawable/ic_baseline_navigate_next_24" />
 
-        <TextView
+        <Button
             android:id="@+id/tvChatWithUs"
             style="@style/FirstTextViewInAccounts"
             android:layout_below="@id/vLineFour"
             android:text="@string/chat_with_us"
+            android:background="@drawable/flag_transparent"
             app:drawableLeftCompat="@drawable/ic_chat" />
 
         <View
