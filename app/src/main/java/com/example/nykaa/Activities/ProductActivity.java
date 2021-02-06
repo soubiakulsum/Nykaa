@@ -4,10 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-
-
+import android.widget.Button;
 import android.widget.ImageView;
-
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -72,11 +70,12 @@ public class ProductActivity extends AppCompatActivity {
 
     private List<ProductMediaItem> listItemsData;
     private ProductDetailResponse response;
+
     private void buildDataFromJson(String json) {
 
         Type type = new TypeToken<ProductDetailResponse>() {
         }.getType();
-         response = new Gson().fromJson(json, type);
+        response = new Gson().fromJson(json, type);
         listItemsData = response.getDetails().getSkuData().getProduct().getProductMedia();
 
         handler.postDelayed(new Runnable() {
@@ -95,6 +94,7 @@ public class ProductActivity extends AppCompatActivity {
         productModelClassList.add(new ProductModelClass(R.drawable.product3));
         productModelClassList.add(new ProductModelClass(R.drawable.product4));
     }
+
     private TextView tvJaipur;
     private TextView tvSharara;
     private TextView tvPrice;
@@ -103,6 +103,8 @@ public class ProductActivity extends AppCompatActivity {
     private TextView tvDetails;
     private ImageView search;
     private ConstraintLayout constraintlayout;
+    private Button addToBag;
+
     private void initViews() {
         ProductRecyclerVIew = findViewById(R.id.ProductRecyclerVIew);
         recyclerViewIndicator = findViewById(R.id.recyclerViewIndicator);
@@ -115,16 +117,26 @@ public class ProductActivity extends AppCompatActivity {
         search = findViewById(R.id.search);
         mBackgroundVideo = findViewById(R.id.mBackgroundVideo);
         constraintlayout = findViewById(R.id.constraintlayout);
+        addToBag = findViewById(R.id.addToBag);
         constraintlayout.setVisibility(View.GONE);
         backgroundVideo();
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ProductActivity.this,SearchActivity.class);
+                Intent intent = new Intent(ProductActivity.this, SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        addToBag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProductActivity.this, CardItemActivity.class);
                 startActivity(intent);
             }
         });
     }
+
     private void backgroundVideo() {
         try {
             mBackgroundVideo.setRawData(R.raw.gify);
@@ -141,12 +153,10 @@ public class ProductActivity extends AppCompatActivity {
 //        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(1,LinearLayoutManager.HORIZONTAL);
         tvJaipur.setText(response.getDetails().getSkuData().getProduct().getTitle());
         tvSharara.setText(response.getDetails().getSkuData().getProduct().getSubTitle());
-        tvPrice.setText("₹"+response.getDetails().getSkuData().getProduct().getDiscountedPrice());
-        discount.setText(response.getDetails().getSkuData().getProduct().getDiscount()+"% off");
-        tvInclusiveOfTaxes.setText("MRP "+response.getDetails().getSkuData().getProduct().getPrice()+" Inclusive of all taxes");
+        tvPrice.setText("₹" + response.getDetails().getSkuData().getProduct().getDiscountedPrice());
+        discount.setText(response.getDetails().getSkuData().getProduct().getDiscount() + "% off");
+        tvInclusiveOfTaxes.setText("MRP " + response.getDetails().getSkuData().getProduct().getPrice() + " Inclusive of all taxes");
         tvDetails.setText(response.getDetails().getSkuData().getProduct().getProductInfo().get(0).getValue());
-
-
 
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
@@ -162,7 +172,7 @@ public class ProductActivity extends AppCompatActivity {
 
     public void ADDTOBAG(View view) {
 
-        Intent intent = new Intent(ProductActivity.this,CardItemActivity.class);
+        Intent intent = new Intent(ProductActivity.this, CardItemActivity.class);
         startActivity(intent);
 
     }

@@ -81,25 +81,25 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
             android:layout_marginTop="5dp"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="@dimen/dp_20"
             android:gravity="center"
             android:text="Shaily MultiColour Georgette Floral \n Saree With Unstitched Blouse Piece\n(Set Of 2)"
             android:textSize="@dimen/sp_13"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivProductImage"
             app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
 
         <ImageView
-            android:layout_width="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="@dimen/dp_40"
-            android:layout_marginTop="@dimen/dp_10"
-            android:onClick="RemoveItem"
             android:id="@+id/Remove"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginEnd="@dimen/dp_40"
+            android:onClick="RemoveItem"
             android:src="@drawable/deleteitem"
-            app:layout_constraintTop_toBottomOf="@+id/tvProductDetails"
-            android:layout_height="@dimen/dp_30"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductDetails" />
 
         <TextView
             android:id="@+id/tvProductPrice"
@@ -143,14 +143,14 @@
             android:id="@+id/tvDimensions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="@dimen/dp_20"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/dp_20"
             android:drawableRight="@drawable/ic_baseline_arrow_drop_down_24"
             android:fontFamily="@font/sanspro"
             android:text="One Size|Multi-Colour| QTY :1"
             android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivProductImage"
             app:layout_constraintTop_toBottomOf="@+id/tvLeft" />
 
@@ -160,10 +160,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="@dimen/dp_20"
             android:text="Estimated Delivery : 14 Feb , 2021"
             android:textSize="@dimen/sp_13"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivProductImage"
             app:layout_constraintTop_toBottomOf="@+id/tvDimensions" />
 
@@ -219,11 +219,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="240dp"
             android:layout_marginTop="54dp"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="@dimen/dp_60"
             android:text="₹1,500"
-            app:layout_constraintTop_toBottomOf="@+id/tvCoupon"
-            app:layout_constraintStart_toEndOf="@+id/tvBagTotal"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvBagTotal"
+            app:layout_constraintTop_toBottomOf="@+id/tvCoupon" />
 
         <TextView
             android:id="@+id/tvBagDiscount"
@@ -241,12 +241,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
+
             android:text=" -₹1,403"
             android:textColor="#148F77"
-            android:layout_marginEnd="@dimen/dp_40"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tvBagDiscount"
+            app:layout_constraintEnd_toEndOf="@+id/tvTotalPrice"
+            app:layout_constraintStart_toStartOf="@+id/tvTotalPrice"
             app:layout_constraintTop_toBottomOf="@+id/tvTotalPrice" />
 
         <TextView
@@ -265,12 +264,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
+
             android:fontFamily="@font/cera_pro_medium"
             android:text="₹1,396"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="@dimen/dp_40"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tvSubTotal"
+            app:layout_constraintEnd_toEndOf="@+id/tvDiscountPrice"
+
+            app:layout_constraintStart_toStartOf="@+id/tvDiscountPrice"
             app:layout_constraintTop_toBottomOf="@+id/tvDiscountPrice" />
 
         <TextView
@@ -289,12 +288,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
+
             android:fontFamily="@font/cera_pro_medium"
             android:text="₹0"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="@dimen/dp_40"
-            app:layout_constraintHorizontal_bias="0.946"
-            app:layout_constraintStart_toEndOf="@+id/tvDiscountShop"
+            app:layout_constraintEnd_toEndOf="@+id/textView20"
+
+            app:layout_constraintStart_toStartOf="@+id/textView20"
             app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
         <TextView
@@ -313,12 +312,12 @@
             android:layout_width="9dp"
             android:layout_height="19dp"
             android:layout_marginTop="@dimen/dp_10"
-            android:layout_marginEnd="@dimen/dp_50"
+
             android:fontFamily="@font/cera_pro_medium"
             android:text="₹0"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.954"
-            app:layout_constraintStart_toEndOf="@+id/tvShippingCharges"
+            app:layout_constraintEnd_toEndOf="@+id/textView22"
+
+            app:layout_constraintStart_toStartOf="@+id/textView22"
             app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
         <TextView
@@ -337,12 +336,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
+
             android:fontFamily="@font/cera_pro_medium"
             android:text="₹1,396"
-            app:layout_constraintHorizontal_bias="0.953"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="@dimen/dp_40"
-            app:layout_constraintStart_toEndOf="@+id/tvGrandTotal"
+            app:layout_constraintEnd_toEndOf="@+id/tvShippingPrice"
+
+            app:layout_constraintStart_toStartOf="@+id/tvShippingPrice"
             app:layout_constraintTop_toBottomOf="@+id/tvShippingPrice" />
 
         <TextView
@@ -362,12 +361,12 @@
             android:id="@+id/button"
             android:layout_width="212dp"
             android:layout_height="31dp"
+            android:layout_marginTop="@dimen/dp_20"
             android:layout_marginEnd="80dp"
             android:background="@color/black"
             android:text="Continue"
             android:textColor="@color/white"
             android:textSize="@dimen/dp_10"
-            android:layout_marginTop="@dimen/dp_20"
             app:layout_constraintEnd_toEndOf="@+id/textView27"
             app:layout_constraintTop_toBottomOf="@+id/textView27"
             app:layout_constraintVertical_bias="0.625" />
