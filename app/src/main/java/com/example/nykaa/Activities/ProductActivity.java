@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,7 +26,9 @@ import com.example.nykaa.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.kingfisher.easyviewindicator.RecyclerViewIndicator;
+import com.yqritc.scalablevideoview.ScalableVideoView;
 
+import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +41,8 @@ public class ProductActivity extends AppCompatActivity {
 
     private String productURL;
     private Handler handler;
+    private ScalableVideoView mBackgroundVideo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +102,7 @@ public class ProductActivity extends AppCompatActivity {
     private TextView tvInclusiveOfTaxes;
     private TextView tvDetails;
     private ImageView search;
+    private ConstraintLayout constraintlayout;
     private void initViews() {
         ProductRecyclerVIew = findViewById(R.id.ProductRecyclerVIew);
         recyclerViewIndicator = findViewById(R.id.recyclerViewIndicator);
@@ -107,6 +113,10 @@ public class ProductActivity extends AppCompatActivity {
         tvInclusiveOfTaxes = findViewById(R.id.tvInclusiveOfTaxes);
         tvDetails = findViewById(R.id.tvDetails);
         search = findViewById(R.id.search);
+        mBackgroundVideo = findViewById(R.id.mBackgroundVideo);
+        constraintlayout = findViewById(R.id.constraintlayout);
+        constraintlayout.setVisibility(View.GONE);
+        backgroundVideo();
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,6 +124,16 @@ public class ProductActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    private void backgroundVideo() {
+        try {
+            mBackgroundVideo.setRawData(R.raw.gify);
+            mBackgroundVideo.setLooping(true);
+            mBackgroundVideo.prepare(mp -> mBackgroundVideo.start());
+        } catch (IOException e) {
+            e.printStackTrace();
+            //ignore
+        }
     }
 
     private void setViewPagerAdapter() {
@@ -134,7 +154,8 @@ public class ProductActivity extends AppCompatActivity {
         recyclerViewIndicator.setRecyclerView(ProductRecyclerVIew);
         ProductAdapter productAdapter = new ProductAdapter(listItemsData);
         ProductRecyclerVIew.setAdapter(productAdapter);
-
+        mBackgroundVideo.setVisibility(View.GONE);
+        constraintlayout.setVisibility(View.VISIBLE);
         PagerSnapHelper snapHelper = new PagerSnapHelper();
         snapHelper.attachToRecyclerView(ProductRecyclerVIew);
     }
