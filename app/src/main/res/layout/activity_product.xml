@@ -411,6 +411,7 @@
                     android:layout_marginTop="@dimen/dp_20"
                     android:background="@color/black"
                     android:gravity="center"
+                    android:onClick="ADDTOBAG"
                     android:padding="@dimen/dp_10"
                     android:text="ADD TO BAG"
                     android:textColor="@color/white" />

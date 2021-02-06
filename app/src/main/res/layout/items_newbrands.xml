@@ -7,6 +7,9 @@
         android:layout_width="match_parent"
         android:id="@+id/NewBrandsList"
         android:textColor="@color/black"
+        android:fontFamily="@font/cera_pro_regular"
+        android:textSize="15sp"
+        android:gravity="center"
         android:drawableEnd="@drawable/ic_next"
         android:layout_height="@dimen/dp_50"/>
 

@@ -14,6 +14,10 @@
         android:id="@+id/BrandList"
         android:background="@color/light_grey"
         android:textColor="@color/black"
+        android:textSize="@dimen/sp_15"
+        android:fontFamily="@font/cera_pro_regular"
+        android:gravity="center"
+        android:layout_gravity="center"
         android:layout_height="@dimen/dp_50"/>
 
     <View

@@ -6,6 +6,9 @@
     <TextView
         android:layout_width="match_parent"
         android:id="@+id/LuxeList"
+        android:textSize="@dimen/sp_15"
+        android:fontFamily="@font/cera_pro_regular"
+        android:gravity="center"
         android:textColor="@color/black"
         android:drawableEnd="@drawable/ic_next"
         android:layout_height="@dimen/dp_50"/>
