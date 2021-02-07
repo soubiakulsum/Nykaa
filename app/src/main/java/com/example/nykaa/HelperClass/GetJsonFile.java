@@ -26,19 +26,15 @@ public class GetJsonFile {
 
             for (int index = results.indexOf("<script id=\"__PRELOADED_STATE__\" type=\"application/json\""); index >= 0; ) {
 
-                // Start Index
                 int startIndex = results.indexOf(">", index + 1);
                 ++startIndex;
 
-                // End Index
                 int indexOfEnd = results.indexOf("</script>", startIndex + 1);
 
                 String attributesString = results.substring(startIndex, indexOfEnd);
-                // Replace below line with desired logic with calling trim() on the String attributesString
                 jsonResult = attributesString;
 
-                // Next Address will be after the end of first address
-                index = results.indexOf("<address", indexOfEnd + 1);
+
             }
 
             String finalJsonResult = jsonResult;
