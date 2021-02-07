@@ -374,6 +374,7 @@
 
                     android:layout_below="@+id/vProductLine2"
                     android:layout_marginTop="@dimen/dp_20"
+             
                     android:padding="@dimen/dp_10"
                     android:onClick="ADDTOBAG"
                     android:background="@color/black"
