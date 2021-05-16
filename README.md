@@ -16,6 +16,10 @@ The Real app: https://play.google.com/store/apps/details?id=com.fsn.nds&hl=en_IN
 We have cloned a popular shopping app called Nykaa.<br>We have fetched all the data using assets and the app displays the list of items that are to be viewed<br>and allows  the user to browse through different brands and products
 </p>
 
+<h1 align="center">Preview</h1>
+
+
+
 # Libraries this app uses:
 
 * [Android-Scalable VideoView](https://github.com/yqritc/Android-ScalableVideoView) -  for the scalable view of the vedio.
