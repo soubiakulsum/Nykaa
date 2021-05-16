@@ -1,6 +1,6 @@
 <h1 align="center">NykaaApp Clone</h1>
 <p align="center">
-# Nykaa
+#Nykaa<br>
 Check out the web site here: https://www.nykaafashion.com/<br>
 The Real app: https://play.google.com/store/apps/details?id=com.fsn.nds&hl=en_IN&gl=US
 </p>
