@@ -5,6 +5,17 @@ Check out the web site here: https://www.nykaafashion.com/<br>
 The Real app: https://play.google.com/store/apps/details?id=com.fsn.nds&hl=en_IN&gl=US
 </p>
 
+## Technologies this app uses:
+* Java
+* Retrofit
+* Firebase
+
+## Features Implemented:
+* We have cloned a popular shopping app called Nykaa.<br>
+* We have fetched all the data using assets and the app displays the list of items that are to be viewed<br>
+* It allows  the user to browse through different brands and products.<br>
+* The user can also add the item to the cart or save it for later if they like any item.
+
 <h1 align="center">Screenshots</h1>
   
 <p align="center">
@@ -12,9 +23,6 @@ The Real app: https://play.google.com/store/apps/details?id=com.fsn.nds&hl=en_IN
 </p><br>
 
 
-<p align="center">
-We have cloned a popular shopping app called Nykaa.<br>We have fetched all the data using assets and the app displays the list of items that are to be viewed<br>and allows  the user to browse through different brands and products
-</p>
 
 <h1 align="center">Preview</h1>
 
